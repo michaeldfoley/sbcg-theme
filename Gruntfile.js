@@ -129,7 +129,7 @@ module.exports = function(grunt) {
                     src : ['style.css', 'assets/js/*.js', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
                 },
                 options: {
-                    proxy: "local.dev",
+                    proxy: "192.168.33.10",
                     watchTask: true
                 }
             }
