@@ -5,11 +5,17 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+      
+        dirs: {
+          css: 'assets/styles',
+          img: 'assets/images',
+          js:  'assets/js',
+        },
 
         // watch for changes and trigger sass, jshint, uglify and livereload
         watch: {
             sass: {
-                files: ['assets/styles/**/*.{scss,sass}'],
+                files: ['<%= dirs.css %>/**/*.{scss,sass}'],
                 tasks: ['sass', 'autoprefixer', 'cssmin']
             },
             js: {
@@ -17,9 +23,13 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'uglify']
             },
             images: {
-                files: ['assets/images/**/*.{png,jpg,gif}'],
+                files: ['<%= dirs.img %>/**/*.{png,jpg,gif}'],
                 tasks: ['imagemin']
-            }
+            },
+      			php: {
+      				files : ['**/*.php'],
+              tasks: ['bsReload:all']
+      			}
         },
 
         // sass
@@ -29,8 +39,8 @@ module.exports = function(grunt) {
                     style: 'expanded',
                 },
                 files: {
-                    'assets/styles/build/style.css': 'assets/styles/style.scss',
-                    'assets/styles/build/editor-style.css': 'assets/styles/editor-style.scss'
+                    '<%= dirs.css %>/build/style.css': '<%= dirs.css %>/style.scss',
+                    '<%= dirs.css %>/build/editor-style.css': '<%= dirs.css %>/editor-style.scss'
                 }
             }
         },
@@ -44,8 +54,8 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 flatten: true,
-                src: 'assets/styles/build/*.css',
-                dest: 'assets/styles/build'
+                src: '<%= dirs.css %>/build/*.css',
+                dest: '<%= dirs.css %>/build'
             },
         },
 
@@ -56,7 +66,7 @@ module.exports = function(grunt) {
             },
             minify: {
                 expand: true,
-                cwd: 'assets/styles/build',
+                cwd: '<%= dirs.css %>/build',
                 src: ['*.css', '!*.min.css'],
                 ext: '.css'
             }
@@ -70,7 +80,7 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'assets/js/source/**/*.js'
+                '<%= dirs.js %>/source/**/*.js'
             ]
         },
 
@@ -78,28 +88,28 @@ module.exports = function(grunt) {
         uglify: {
             plugins: {
                 options: {
-                    sourceMap: 'assets/js/plugins.js.map',
+                    sourceMap: '<%= dirs.js %>/plugins.js.map',
                     sourceMappingURL: 'plugins.js.map',
                     sourceMapPrefix: 2
                 },
                 files: {
-                    'assets/js/plugins.min.js': [
-                        'assets/js/source/plugins.js',
-                        'assets/js/vendor/navigation.js',
-                        'assets/js/vendor/skip-link-focus-fix.js',
-                        // 'assets/js/vendor/yourplugin/yourplugin.js',
+                    '<%= dirs.js %>/plugins.min.js': [
+                        '<%= dirs.js %>/source/plugins.js',
+                        '<%= dirs.js %>/vendor/navigation.js',
+                        '<%= dirs.js %>/vendor/skip-link-focus-fix.js',
+                        // '<%= dirs.js %>/vendor/yourplugin/yourplugin.js',
                     ]
                 }
             },
             main: {
                 options: {
-                    sourceMap: 'assets/js/main.js.map',
+                    sourceMap: '<%= dirs.js %>/main.js.map',
                     sourceMappingURL: 'main.js.map',
                     sourceMapPrefix: 2
                 },
                 files: {
-                    'assets/js/main.min.js': [
-                        'assets/js/source/main.js'
+                    '<%= dirs.js %>/main.min.js': [
+                        '<%= dirs.js %>/source/main.js'
                     ]
                 }
             }
@@ -115,9 +125,9 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'assets/images/',
+                    cwd: '<%= dirs.img %>/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'assets/images/'
+                    dest: '<%= dirs.img %>/'
                 }]
             }
         },
@@ -126,12 +136,13 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : ['style.css', 'assets/js/*.js', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                    src : ['style.css', '<%= dirs.js %>/*.js', '<%= dirs.img %>/**/*.{png,jpg,jpeg,gif,webp,svg}']
                 },
                 options: {
-                    proxy: "192.168.33.10",
-                    watchTask: true
-                }
+                    watchTask: true,
+                    proxy: 'sbcg.dev',
+                    port: 8000
+                },
             }
         },
 
