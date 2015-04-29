@@ -2,3 +2,9 @@
 node_modules
 .sass-cache
 .idea
+
+# Generated files
+/*.css
+/assets/styles/build/
+/assets/js/*.js
+/assets/js/*.js.map
