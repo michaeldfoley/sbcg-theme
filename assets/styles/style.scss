@@ -18,12 +18,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 */
 
-
+// Base
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/normalize";
 @import "partials/print";
 
+// General
 @import "partials/scaffolding";
 @import "partials/grid";
 @import "partials/type";
+
+// Page specific
+
+// Helpers
+@import "partials/accessibility"
