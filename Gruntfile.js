@@ -25,11 +25,7 @@ module.exports = function(grunt) {
             images: {
                 files: ['<%= dirs.img %>/**/*.{png,jpg,gif}'],
                 tasks: ['imagemin']
-            },
-      			php: {
-      				files : ['**/*.php'],
-              tasks: ['bsReload:all']
-      			}
+            }
         },
 
         // sass
