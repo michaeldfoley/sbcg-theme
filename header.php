@@ -25,16 +25,21 @@
 
 	<a class="skip-link sr" href="#content"><?php _e( 'Skip to content', '_sbcgtheme' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation container" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', '_sbcgtheme' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+	<header id="masthead" class="main-header" role="banner">
+  	<div class="container">
+  		<div class="header-branding">
+  			<h1 class="header-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+  		</div>
+  
+  		<nav id="site-navigation" class="main-navigation" role="navigation">
+  			<button class="nav-toggle"><?php _e( 'Primary Menu', '_sbcgtheme' ); ?></button>
+  			<?php wp_nav_menu( array( 'theme_location' => 'primary', 
+    			                        'depth' => 1, 
+    			                        'container' => '',
+    			                        'menu_class' => 'nav-primary', 
+    			                        'walker' => new Sbcg_Menu() ) ); ?>
+  		</nav><!-- #site-navigation -->
+  	</div><!-- .container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="container">

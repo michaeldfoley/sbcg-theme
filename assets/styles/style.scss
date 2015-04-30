@@ -29,7 +29,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "partials/grid";
 @import "partials/type";
 
-// Page specific
+// Content specific
+@import "partials/header";
+@import "partials/nav";
 
 // Helpers
 @import "partials/accessibility"

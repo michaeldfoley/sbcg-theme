@@ -1,0 +1,40 @@
+// Nav
+// --------------------------------------------------
+
+
+.nav {
+  
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+}
+
+
+// primary nav styles
+.nav-primary {
+  font-weight: $font-weight-strong;
+  
+  a {
+    display: block;
+    padding: 10px 15px;
+    transition: background .15s ease-out;
+    
+    &:hover {
+      background: darken($header-bg, 10%);
+    }
+  }
+}
+
+
+// toggle more nav items
+@media (min-width: $screen-sm) {
+  .nav-toggle {
+    display: none;
+  }
+}
