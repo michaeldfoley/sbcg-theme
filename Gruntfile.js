@@ -110,6 +110,25 @@ module.exports = function(grunt) {
                 }
             }
         },
+        
+        // svg sprite
+        svg_sprite: {
+          options: {
+            mode: {
+              symbol: {
+                dest: './',
+                sprite: 'sprite.symbol.svg'
+              } 
+            }
+          },
+          dist: {
+            expand: true,
+            cwd: '<%= dirs.img %>',
+            src: ['**/*.svg','!sprite.symbol.svg'],
+            dest: '<%= dirs.img %>',
+          },
+          
+        },
 
         // image optimization
         imagemin: {
@@ -171,6 +190,6 @@ module.exports = function(grunt) {
     grunt.renameTask('rsync', 'deploy');
 
     // register task
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify', 'imagemin', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify', 'svg_sprite', 'imagemin', 'browserSync', 'watch']);
 
 };
