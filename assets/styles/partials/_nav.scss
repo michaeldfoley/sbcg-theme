@@ -12,21 +12,29 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  padding: 0;
   list-style: none;
 }
 
 
 // primary nav styles
 .nav-primary {
+  background: $nav-bg;
+  color: $nav-color;
+}
+.nav-primary--list {
+  margin-bottom: 0;
   font-weight: $font-weight-strong;
   
   a {
     display: block;
     padding: 10px 15px;
     transition: background .15s ease-out;
+    color: $nav-link-color;
     
     &:hover {
-      background: darken($header-bg, 10%);
+      color: $nav-link-hover-color;
+      background: darken($nav-bg, 10%);
     }
   }
 }

@@ -113,20 +113,10 @@ $btn-default-hover-border:       darken($btn-default-hover-bg, 5%) !default;
 //
 //##
 
-$header-bg:                      $brand-primary !default;
-$header-color:                   #ffffff !default;
-$header-link-color:              #ffffff !default;
-$header-link-hover-color:        #ffffff !default;
-
-
-//== Nav
-//
-//##
-
-$nav-link-color:                 $brand-primary !default;
-$nav-link-hover-color:           $nav-link-color !default;
-
-$nav-line-color:                 $nav-link-hover-color !default;
+$nav-bg:                         $brand-primary !default;
+$nav-color:                      #ffffff !default;
+$nav-link-color:                 #ffffff !default;
+$nav-link-hover-color:           #ffffff !default;
 
 
 //== Forms

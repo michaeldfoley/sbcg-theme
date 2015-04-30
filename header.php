@@ -26,20 +26,25 @@
 	<a class="skip-link sr" href="#content"><?php _e( 'Skip to content', '_sbcgtheme' ); ?></a>
 
 	<header id="masthead" class="main-header" role="banner">
-  	<div class="container">
-  		<div class="header-branding">
-  			<h1 class="header-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-  		</div>
+		<div class="header-branding">
+  		<div class="header-logo">
+    		<div class="header-img">
+      		<svg aria-label="Urban Garden"><use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/sprite.symbol.svg#logo-web" /></svg>
+    		</div>
+      </div>
+			<h1 class="header-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		</div>
   
-  		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<nav id="site-navigation" class="nav-primary" role="navigation">
+    	<div class="container">
   			<button class="nav-toggle"><?php _e( 'Primary Menu', '_sbcgtheme' ); ?></button>
   			<?php wp_nav_menu( array( 'theme_location' => 'primary', 
     			                        'depth' => 1, 
     			                        'container' => '',
-    			                        'menu_class' => 'nav-primary', 
+    			                        'menu_class' => 'nav-primary--list', 
     			                        'walker' => new Sbcg_Menu() ) ); ?>
-  		</nav><!-- #site-navigation -->
-  	</div><!-- .container -->
+    	</div>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="container">
