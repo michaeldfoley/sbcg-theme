@@ -81,6 +81,7 @@ function mb_imagelink_setup() {
 /**
  * Custom menu walker
  */
+
 class Sbcg_Menu extends Walker {
 
     // Tell Walker where to inherit it's parent and id values
@@ -91,12 +92,18 @@ class Sbcg_Menu extends Walker {
 
     /**
      * At the start of each element, output a <li> and <a> tag structure.
+     * If there are custom classes, we'll add those as well. If the item is
+     * the current page, it will get the class of active.
      * 
      * Note: Menu objects include url and title properties, so we will use those.
      */
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = get_post_meta( $item->ID, '_menu_item_classes', true );
+        if ( intval($item->object_id) === get_the_ID() ) {
+          $classes[] = 'active';
+        }
         $output .= sprintf( "\n<li%s><a href='%s'>%s</a></li>\n",
-            ( intval($item->object_id) === get_the_ID() ) ? ' class="active"' : '',
+            ( count($classes) > 0 ) ? ' class="' . implode(' ', $classes) . '"' : '',
             $item->url,
             $item->title
         );
