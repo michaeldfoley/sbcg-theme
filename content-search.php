@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _mbbasetheme
+ * @package _sbcgtheme
  */
 ?>
 
@@ -14,7 +14,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _mbbasetheme_posted_on(); ?>
+			<?php _sbcgtheme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -27,29 +27,29 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', '_mbbasetheme' ) );
-				if ( $categories_list && _mbbasetheme_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ', ', '_sbcgtheme' ) );
+				if ( $categories_list && _sbcgtheme_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', '_mbbasetheme' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', '_sbcgtheme' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', '_mbbasetheme' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', '_sbcgtheme' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', '_mbbasetheme' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', '_sbcgtheme' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_mbbasetheme' ), __( '1 Comment', '_mbbasetheme' ), __( '% Comments', '_mbbasetheme' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_sbcgtheme' ), __( '1 Comment', '_sbcgtheme' ), __( '% Comments', '_sbcgtheme' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', '_mbbasetheme' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', '_sbcgtheme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

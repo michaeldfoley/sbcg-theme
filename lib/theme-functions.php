@@ -1,8 +1,8 @@
 <?php
 /**
- * _mbbasetheme theme functions definted in /lib/init.php
+ * _sbcgtheme theme functions definted in /lib/init.php
  *
- * @package _mbbasetheme
+ * @package _sbcgtheme
  */
 
 
@@ -12,7 +12,7 @@
 function mb_widgets_init() {
 	// Main Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', '_mbbasetheme' ),
+		'name'          => __( 'Sidebar', '_sbcgtheme' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -82,7 +82,7 @@ function mb_imagelink_setup() {
  * Enqueue scripts
  */
 function mb_scripts() {
-	wp_enqueue_style( '_mbbasetheme-style', get_stylesheet_uri() );
+	wp_enqueue_style( '_sbcgtheme-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

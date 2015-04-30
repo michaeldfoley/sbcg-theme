@@ -1,8 +1,8 @@
 <?php
 /**
- * _mbbasetheme theme init setup
+ * _sbcgtheme theme init setup
  *
- * @package _mbbasetheme
+ * @package _sbcgtheme
  */
 
 /**
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 900; /* pixels */
 }
 
-if ( ! function_exists( '_mbbasetheme_setup' ) ) :
+if ( ! function_exists( '_sbcgtheme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( '_mbbasetheme_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function _mbbasetheme_setup() {
+function _sbcgtheme_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _mbbasetheme, use a find and replace
-	 * to change '_mbbasetheme' to the name of your theme in all the template files
+	 * If you're building a theme based on _sbcgtheme, use a find and replace
+	 * to change '_sbcgtheme' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( '_mbbasetheme', get_template_directory() . '/languages' );
+	load_theme_textdomain( '_sbcgtheme', get_template_directory() . '/languages' );
 
 	// Clean up the head
 	remove_action( 'wp_head', 'rsd_link' );
@@ -41,7 +41,7 @@ function _mbbasetheme_setup() {
 
 	// Register nav menus
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_mbbasetheme' ),
+		'primary' => __( 'Primary Menu', '_sbcgtheme' ),
 	) );
 
 	// Register Widget Areas
@@ -66,7 +66,7 @@ function _mbbasetheme_setup() {
 	// add_image_size( $name, $width = 0, $height = 0, $crop = false );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_mbbasetheme_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( '_sbcgtheme_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -112,6 +112,6 @@ function _mbbasetheme_setup() {
 	add_filter( 'the_content_more_link', 'mb_remove_more_jump_link' );
 
 }
-endif; // _mbbasetheme_setup
+endif; // _sbcgtheme_setup
 
-add_action( 'after_setup_theme', '_mbbasetheme_setup' );
+add_action( 'after_setup_theme', '_sbcgtheme_setup' );
