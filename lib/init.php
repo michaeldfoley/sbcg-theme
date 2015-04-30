@@ -66,10 +66,12 @@ function _sbcgtheme_setup() {
 	// add_image_size( $name, $width = 0, $height = 0, $crop = false );
 
 	// Setup the WordPress core custom background feature.
+/*
 	add_theme_support( 'custom-background', apply_filters( '_sbcgtheme_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+*/
 
 	// Remove Dashboard Meta Boxes
 	// Function location: /lib/theme-functions.php
@@ -101,6 +103,7 @@ function _sbcgtheme_setup() {
 	// Enqueue scripts
 	// Function location: /lib/theme-functions.php
 	add_action( 'wp_enqueue_scripts', 'mb_scripts' );
+	add_action( 'wp_enqueue_scripts', 'sbcg_inline_scripts' );
 
 	// Remove Query Strings From Static Resources
 	// Function location: /lib/theme-functions.php
