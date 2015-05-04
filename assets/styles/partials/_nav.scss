@@ -27,8 +27,8 @@
   
   .nav-item {
     text-align: center;
-    flex-grow: 1;
     font-size: 5vw;
+    flex-grow: 1;
     
     @media (min-width: $screen-xs - 12) {
       font-size: $font-size-base;
@@ -108,6 +108,10 @@
 }
 .nav-primary.in {
   height: 96px;
+  
+  .nav-item {
+    flex-grow: 0;
+  }
 }
 
 .nav-primary.collapse .nav-item {
@@ -120,6 +124,10 @@
 }
 
 @media (min-width: $screen-xs) {
+  .nav-primary,
+  .nav-primary.in {
+    height: auto;
+  }
   .nav-primary.collapse .nav-item {
     display: block;
   }
