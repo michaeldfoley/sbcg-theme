@@ -102,12 +102,28 @@ class Sbcg_Menu extends Walker {
         if ( intval($item->object_id) === get_the_ID() ) {
           $classes[] = 'active';
         }
-        $output .= sprintf( "\n<li%s><a href='%s'>%s</a></li>\n",
-            ( count($classes) > 0 ) ? ' class="' . implode(' ', $classes) . '"' : '',
+        $output .= sprintf( "\n<li class='nav-item %s'><a href='%s'>%s</a></li>\n", 
+            implode(' ', $classes),
             $item->url,
             $item->title
         );
     }
+}
+
+add_filter('wp_nav_menu_items','add_hamburger_menu', 10, 2);
+function add_hamburger_menu( $items, $args ) {
+  if( $args->theme_location == 'primary')  {
+    $hamburger = '<li class="nav-toggle--container">
+              			<button class="nav-toggle collapsed" data-toggle="collapse" data-target="#menu-primary" aria-expanded="false" aria-controls="navbar">
+              			  <span class="sr">' . __( 'Menu', '_sbcgtheme' ) . '</span>
+              			  <span class="icon-bar"></span>
+              			  <span class="icon-bar"></span>
+              			  <span class="icon-bar"></span>
+              			</button>
+                  </li>';
+
+  }
+  return $hamburger . $items;
 }
 
 /**
@@ -121,8 +137,6 @@ function mb_scripts() {
 	}
 
 	if ( !is_admin() ) {
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'customplugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array('jquery'), NULL, true );
 		wp_enqueue_script( 'customscripts', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), NULL, true );
 		
 	}

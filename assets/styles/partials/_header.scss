@@ -36,7 +36,7 @@
   margin: 0;
   padding-top: 10px;
   font-family: $font-family-sans-serif;
-  font-size: 4.5vw;
+  font-size: 5vw;
   text-align: center;
   background: $nav-bg;
   color: $nav-color;
@@ -78,7 +78,6 @@
 
 @media (min-width: $screen-lg) {
   .header-title {
-    margin-right: 70px;
     font-size: 2.9em;
   }
 }

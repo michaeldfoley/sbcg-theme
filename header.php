@@ -35,13 +35,12 @@
 			<h1 class="header-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div>
   
-		<nav id="site-navigation" class="nav-primary" role="navigation">
+		<nav id="site-navigation" class="nav-primary collapse" role="navigation">
     	<div class="container">
-  			<button class="nav-toggle"><?php _e( 'Primary Menu', '_sbcgtheme' ); ?></button>
   			<?php wp_nav_menu( array( 'theme_location' => 'primary', 
     			                        'depth' => 1, 
     			                        'container' => '',
-    			                        'menu_class' => 'nav-primary--list', 
+    			                        'menu_class' => 'nav-primary--list nav-menu collapse', 
     			                        'walker' => new Sbcg_Menu() ) ); ?>
     	</div>
 		</nav><!-- #site-navigation -->

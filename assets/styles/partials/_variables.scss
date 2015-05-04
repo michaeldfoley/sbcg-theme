@@ -75,7 +75,7 @@ $padding-base-vertical:     6px !default;
 $padding-base-horizontal:   16px !default;
 
 $padding-large-vertical:    10px !default;
-$padding-large-horizontal:  16px !default;
+$padding-large-horizontal:  25px !default;
 
 $padding-small-vertical:    5px !default;
 $padding-small-horizontal:  10px !default;
@@ -177,7 +177,7 @@ $zindex-7:                    1060 !default;
 //
 //## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
-$screen-xs:                  30rem !default;
+$screen-xs:                  35rem !default;
 $screen-sm:                  48rem !default;
 $screen-md:                  62rem !default;
 $screen-lg:                  75rem !default;

@@ -24,11 +24,14 @@
 
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
 		menu.className += ' nav-menu';
+		
+	if ( -1 === container.className.indexOf( 'collapse' ) )
+		container.className += ' collapse';
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) )
-			container.className = container.className.replace( ' toggled', '' );
+		if ( -1 !== container.className.indexOf( 'in' ) )
+			container.className = container.className.replace( ' in', '' );
 		else
-			container.className += ' toggled';
+			container.className += ' in';
 	};
 } )();
