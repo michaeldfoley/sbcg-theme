@@ -18,9 +18,13 @@ module.exports = function(grunt) {
                 files: ['<%= dirs.css %>/**/*.{scss,sass}'],
                 tasks: ['sass', 'autoprefixer', 'cssmin']
             },
-            js: {
+            jshint: {
                 files: '<%= jshint.all %>',
                 tasks: ['jshint', 'uglify']
+            },
+            js: {
+                files: '<%= dirs.js %>/vendor/**/*.js',
+                tasks: ['uglify']
             },
             images: {
                 files: ['<%= dirs.img %>/**/*.{png,jpg,gif}'],
@@ -82,21 +86,6 @@ module.exports = function(grunt) {
 
         // uglify to concat, minify, and make source maps
         uglify: {
-            plugins: {
-                options: {
-                    sourceMap: '<%= dirs.js %>/plugins.js.map',
-                    sourceMappingURL: 'plugins.js.map',
-                    sourceMapPrefix: 2
-                },
-                files: {
-                    '<%= dirs.js %>/plugins.min.js': [
-                        '<%= dirs.js %>/source/plugins.js',
-                        '<%= dirs.js %>/vendor/navigation.js',
-                        '<%= dirs.js %>/vendor/skip-link-focus-fix.js',
-                        // '<%= dirs.js %>/vendor/yourplugin/yourplugin.js',
-                    ]
-                }
-            },
             main: {
                 options: {
                     sourceMap: '<%= dirs.js %>/main.js.map',
@@ -105,6 +94,9 @@ module.exports = function(grunt) {
                 },
                 files: {
                     '<%= dirs.js %>/main.min.js': [
+                        '<%= dirs.js %>/source/plugins.js',
+                        '<%= dirs.js %>/vendor/navigation.js',
+                        '<%= dirs.js %>/vendor/skip-link-focus-fix.js',
                         '<%= dirs.js %>/source/main.js'
                     ]
                 }
