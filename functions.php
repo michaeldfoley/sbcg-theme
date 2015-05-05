@@ -35,6 +35,11 @@ require get_template_directory() . '/lib/theme-shortcodes.php';
 // require get_template_directory() . '/lib/inc/custom-header.php';
 
 /**
+ * Implement the Custom Settings page feature.
+ */
+require get_template_directory() . '/lib/inc/custom-settings-page.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/lib/inc/template-tags.php';

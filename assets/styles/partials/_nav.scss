@@ -1,36 +1,39 @@
 // Nav
 // --------------------------------------------------
 
-
-.nav {
+.header--inner .nav-primary {
+  flex-grow: 1;
   
+  @media (min-width: $screen-sm) {
+    flex-grow: 0;
+  }
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0;
   list-style: none;
 }
 
 
 // primary nav styles
-.nav-primary {
-  background: $nav-bg;
-  color: $nav-color;
-}
 .nav-primary--list {
   margin-bottom: 0;
-  font-weight: $font-weight-strong;
+  
+  @media (min-width: $screen-xs) {
+    font-weight: $font-weight-strong;
+    justify-content: center;
+  }
   
   .nav-item {
     text-align: center;
     font-size: 5vw;
     flex-grow: 1;
     
-    @media (min-width: $screen-xs - 12) {
+    @media (min-width: $screen-xxs) {
       font-size: $font-size-base;
     }
     
@@ -42,15 +45,16 @@
   a {
     display: block;
     transition: background .15s ease-out;
-    color: $nav-link-color;
     padding: $padding-large-vertical  $padding-large-horizontal/2;
-      
-    @media (min-width: $screen-sm) {
-      padding: $padding-large-vertical  $padding-large-horizontal;
+    
+    @media (min-width: $screen-xs) {
+      padding-left: 0;
+      padding-right: 0;
     }
     
-    &:hover {
-      color: $nav-link-hover-color;
+    @media (min-width: $screen-sm) {
+      padding-left: $padding-large-horizontal;
+      padding-right: $padding-large-horizontal;
     }
   }
 }
@@ -62,6 +66,7 @@
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
+  padding-left: 0;
   outline: none;
 }
 @media (min-width: $screen-xs) {
@@ -76,16 +81,13 @@
   display: block;
   width: 22px;
   height: 2px;
+  background-color: $link-color;
   border-radius: 1px;
   transition: all .35s ease-out;
   
   + .icon-bar {
     margin-top: 4px;
   }
-}
-
-.nav-primary .icon-bar {
-  background-color: #ffffff;
 }
 
 .collapse.in .icon-bar {
@@ -100,6 +102,27 @@
 }
 
 
+// Homepage nav styles
+.nav-primary--homepage {
+  padding-left: ($grid-column-gutter / 2);
+  padding-right: ($grid-column-gutter / 2);
+  background: $nav-bg;
+  color: $nav-color;
+  
+  a {
+    color: $nav-link-color;
+    
+    &:hover {
+      color: $nav-link-hover-color;
+    }
+  }
+  
+  .icon-bar {
+    background-color: #ffffff;
+  }
+}
+
+
 
 // Toggled
 .nav-primary {
@@ -108,10 +131,6 @@
 }
 .nav-primary.in {
   height: 96px;
-  
-  .nav-item {
-    flex-grow: 0;
-  }
 }
 
 .nav-primary.collapse .nav-item {

@@ -184,8 +184,9 @@ $zindex-7:                    1060 !default;
 //
 //## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
-$screen-xs:                  35rem !default;
-$screen-sm:                  48rem !default;
+$screen-xxs:                 24rem !default;
+$screen-xs:                  40rem !default;
+$screen-sm:                  52rem !default;
 $screen-md:                  62rem !default;
 $screen-lg:                  75rem !default;
 $screen-xl:                  100rem !default;
