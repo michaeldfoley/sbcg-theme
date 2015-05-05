@@ -1,0 +1,23 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Lead Designer and Developer: Michael Foley
+    Twitter: @michaeldfoley
+    From: Brooklyn, NY, USA
+
+# THANKS
+
+    Bee icon: Juan Sebastian Rickenmann
+    Apple core icon: Andrew McKinley
+    Trowel icon: Blake Kimmel
+    Turnip icon: Oleg Frolov
+    
+    Wordpress Starter Theme: Matt Banks's
+    Twitter: @mattbanks
+
+# TECHNOLOGY COLOPHON
+
+    PHP, HTML5, CSS3
+    Normalize.css, HTML5Boilerplate
