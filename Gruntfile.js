@@ -29,6 +29,10 @@ module.exports = function(grunt) {
             images: {
                 files: ['<%= dirs.img %>/**/*.{png,jpg,gif}'],
                 tasks: ['imagemin']
+            },
+            svg: {
+                files: ['<%= dirs.img %>/**/*.svg','!<%= dirs.img %>/sprite.symbol.svg'],
+                tasks: ['svg_sprite']
             }
         },
 
