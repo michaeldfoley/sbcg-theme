@@ -1,0 +1,46 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+.card {
+  display: flex;
+  padding: ($grid-column-gutter / 2);
+  background-color: $card-bg;
+}
+
+.card-row {
+  margin: 0 ($grid-column-gutter / -2) $line-height-computed;
+}
+
+.card-icon {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 20px;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+@media (min-width: $screen-sm) {
+  .card-row {
+    display: flex;
+    margin-left: ($grid-column-gutter / -4);
+    margin-right: ($grid-column-gutter / -4);
+  }
+  
+  .card {
+    display: block;
+    flex: 1;
+    width: percentage((3 / $grid-columns));
+    margin: 0 ($grid-column-gutter / 4);
+    padding: ($grid-column-gutter / 2) ($grid-column-gutter / 4);
+    border: 1px solid $card-border;
+  }
+  
+  .card-icon {
+    width: 100%;
+    margin: 0 0 $line-height-computed;
+  }
+}

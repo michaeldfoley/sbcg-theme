@@ -25,6 +25,11 @@ require get_template_directory() . '/lib/theme-functions.php';
 require get_template_directory() . '/lib/theme-helpers.php';
 
 /**
+ * Shortcodes for use in this theme
+ */
+require get_template_directory() . '/lib/theme-shortcodes.php';
+
+/**
  * Implement the Custom Header feature.
  */
 // require get_template_directory() . '/lib/inc/custom-header.php';

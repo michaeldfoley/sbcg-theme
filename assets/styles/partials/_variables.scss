@@ -94,6 +94,13 @@ $grid-columns:              12;
 $grid-column-gutter:        60px;
 
 
+//== Cards
+//
+//
+$card-bg:                   $gray-lighter;
+$card-border:               darken($card-bg, 10%);
+
+
 //== Buttons
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
