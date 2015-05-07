@@ -35,9 +35,19 @@ require get_template_directory() . '/lib/theme-shortcodes.php';
 // require get_template_directory() . '/lib/inc/custom-header.php';
 
 /**
- * Implement the Custom Settings page feature.
+ * Implement the Custom Sanitizers.
  */
-require get_template_directory() . '/lib/inc/custom-settings-page.php';
+require get_template_directory() . '/lib/inc/custom-sanitizers.php';
+
+/**
+ * Implement the Custom Title feature.
+ */
+require get_template_directory() . '/lib/inc/custom-title.php';
+
+/**
+ * Implement the Custom Banners feature.
+ */
+require get_template_directory() . '/lib/inc/custom-banners.php';
 
 /**
  * Custom template tags for this theme.

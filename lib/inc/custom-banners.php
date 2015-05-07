@@ -1,60 +1,30 @@
 <?php
   
 /**
- * Adds the individual sections, settings, and controls to the theme customizer
+ * Adds the custom banner sections to the theme customizer
  */
-function _sbcgtheme_customizer( $wp_customize ) {
+function _sbcgtheme_banner_customizer( $wp_customize ) {
+  
     /**
-     * Adds Inner Pages Title
-     */
-    $wp_customize->add_section(
-        '_sbcgtheme_innertitle_section',
-        array(
-            'title' => __( 'Inner Pages Title', '_sbcgtheme' ),
-            'description' => __( 'This is a shortened title for the thin header.', '_sbcgtheme' ),
-            'priority' => 35,
-        )
-    );
-    
-    $wp_customize->add_setting(
-        '_sbcgtheme_innertitle_textbox',
-        array(
-            'sanitize_callback' => '_sbcgtheme_sanitize_text'
-        )
-    );
-    
-    $wp_customize->add_control(
-        '_sbcgtheme_innertitle_textbox',
-        array(
-            'label' => __( 'Inner Pages Title', '_sbcgtheme' ),
-            'section' => 'title_tagline',
-            'type' => 'text',
-            'description' => __( 'This is a shortened title for the thin inner page header.', '_sbcgtheme' ),
-            'priority' => 10
-        )
-    );
-    
-    
-    /**
-     * Adds Banners panel
+     * Adds banners panel
      */
     $wp_customize->add_panel( 
       '_sbcgtheme_banner_panel', 
       array(
-        'title' => __( 'Frontpage Banners', '_sbcgtheme' ),
-        'description' => 'These appear on the homepage only.',
-        'active_callback' => 'is_front_page',
+        'title' => __( 'Banners', '_sbcgtheme' ),
         'priority' => 105,
       ) 
     );
     
     
-    // Top Banner
+    /**
+     * Top banner
+     */
     $wp_customize->add_section(
         '_sbcgtheme_topbanner_section',
         array(
             'title' => __( 'Top Banner', '_sbcgtheme' ),
-            'description' => __( 'This appears right below the nav on the homepage.', '_sbcgtheme' ),
+            'description' => __( 'This appears right below the nav.', '_sbcgtheme' ),
             'priority' => 10,
             'panel' => '_sbcgtheme_banner_panel'
         )
@@ -86,7 +56,7 @@ function _sbcgtheme_customizer( $wp_customize ) {
     $wp_customize->add_control(
         '_sbcgtheme_topbanner_startdate',
         array(
-            'label' => 'Start Date',
+            'label' => __( 'Start Date', '_sbcgtheme' ),
             'section' => '_sbcgtheme_topbanner_section',
             'type' => 'datetime',
             'priority' => 15,
@@ -106,7 +76,7 @@ function _sbcgtheme_customizer( $wp_customize ) {
     $wp_customize->add_control(
         '_sbcgtheme_topbanner_enddate',
         array(
-            'label' => 'End Date',
+            'label' => __( 'End Date', '_sbcgtheme' ),
             'section' => '_sbcgtheme_topbanner_section',
             'type' => 'datetime',
             'priority' => 16,
@@ -116,13 +86,71 @@ function _sbcgtheme_customizer( $wp_customize ) {
         )
     );
     
+    $wp_customize->add_setting(
+        '_sbcgtheme_topbanner_allposts'
+    );
     
-    // Bottom Banner
+    $wp_customize->add_control(
+        '_sbcgtheme_topbanner_allposts',
+        array(
+            'label' => __( 'Add to All Posts', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_topbanner_section',
+            'type' => 'checkbox',
+            'priority' => 18,
+        )
+    );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_topbanner_allpages'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_topbanner_allpages',
+        array(
+            'label' => __( 'Add to All Pages', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_topbanner_section',
+            'type' => 'checkbox',
+            'priority' => 19,
+        )
+    );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_topbanner_frontpage'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_topbanner_frontpage',
+        array(
+            'label' => __( 'Add to Homepage', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_topbanner_section',
+            'type' => 'checkbox',
+            'priority' => 20,
+        )
+    );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_topbanner_page'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_topbanner_page',
+        array(
+            'label' => __( 'Add to a specific page', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_topbanner_section',
+            'type' => 'dropdown-pages',
+            'priority' => 17
+        )
+    );
+    
+    
+    /**
+     * Bottom banner
+     */
     $wp_customize->add_section(
         '_sbcgtheme_bottombanner_section',
         array(
             'title' => __( 'Bottom Banner', '_sbcgtheme' ),
-            'description' => __( 'This appears right above the footer on the homepage.', '_sbcgtheme' ),
+            'description' => __( 'This appears right above the footer.', '_sbcgtheme' ),
             'priority' => 20,
             'panel' => '_sbcgtheme_banner_panel'
         )
@@ -183,20 +211,63 @@ function _sbcgtheme_customizer( $wp_customize ) {
             )
         )
     );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_bottombanner_allposts'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_bottombanner_allposts',
+        array(
+            'label' => __( 'Add to All Posts', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_bottombanner_section',
+            'type' => 'checkbox',
+            'priority' => 18,
+        )
+    );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_bottombanner_allpages'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_bottombanner_allpages',
+        array(
+            'label' => __( 'Add to All Pages', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_bottombanner_section',
+            'type' => 'checkbox',
+            'priority' => 19,
+        )
+    );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_bottombanner_frontpage'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_bottombanner_frontpage',
+        array(
+            'label' => __( 'Add to Homepage', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_bottombanner_section',
+            'type' => 'checkbox',
+            'priority' => 20,
+        )
+    );
+    
+    $wp_customize->add_setting(
+        '_sbcgtheme_bottombanner_page'
+    );
+    
+    $wp_customize->add_control(
+        '_sbcgtheme_bottombanner_page',
+        array(
+            'label' => __( 'Add to a specific page', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_bottombanner_section',
+            'type' => 'dropdown-pages',
+            'priority' => 17
+        )
+    );
 }
-add_action( 'customize_register', '_sbcgtheme_customizer' );
-
-function _sbcgtheme_sanitize_text( $input ) {
-    return wp_kses_post( force_balance_tags( $input ) );
-}
-
-function _sbcgtheme_sanitize_date( $input ) {
-    if ( strtotime($input) )
-      $input = date('n/j/Y g:i:s a', strtotime($input));
-    else
-      $input = current_time('n/j/Y g:i:s a');
-      
-    return $input;
-}
+add_action( 'customize_register', '_sbcgtheme_banner_customizer' );
 
 ?>

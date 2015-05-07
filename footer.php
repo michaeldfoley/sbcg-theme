@@ -11,7 +11,10 @@
 	</div><!-- #content -->
   
   
-	<?php if ( is_front_page ()
+	<?php if ( ( (is_front_page () && get_theme_mod( '_sbcgtheme_bottombanner_frontpage') )
+  	            || ( is_page() && get_theme_mod( '_sbcgtheme_bottombanner_allpages') )
+  	            || ( is_single() && get_theme_mod( '_sbcgtheme_bottombanner_allposts') )
+  	            || ( is_page( get_theme_mod( '_sbcgtheme_bottombanner_page') ) && get_theme_mod( '_sbcgtheme_bottombanner_page') ) )
   	         && get_theme_mod( '_sbcgtheme_bottombanner_textarea' ) 
   	         && strtotime( get_theme_mod( '_sbcgtheme_bottombanner_startdate', 'now' ) ) <= current_time('timestamp')   
   	         && strtotime( get_theme_mod( '_sbcgtheme_bottombanner_enddate', '+25 years' ) ) > current_time('timestamp') ) : ?>
