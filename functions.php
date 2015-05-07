@@ -50,6 +50,11 @@ require get_template_directory() . '/lib/inc/custom-title.php';
 require get_template_directory() . '/lib/inc/custom-banners.php';
 
 /**
+ * Implement the Custom Contact Info feature.
+ */
+require get_template_directory() . '/lib/inc/custom-contact.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/lib/inc/template-tags.php';
