@@ -10,7 +10,12 @@
 }
 
 .card-row {
-  margin: 0 ($grid-column-gutter / -2) $line-height-computed;
+  margin: $section-gutter/2 ($grid-column-gutter / -2);
+  
+  @media (min-width: $screen-sm) {
+    margin-top: $section-gutter;
+    margin-bottom: $section-gutter;
+  }
 }
 
 .card-icon {
