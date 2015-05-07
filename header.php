@@ -52,5 +52,17 @@
   			                        'walker' => new Sbcg_Menu() ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	
+  	
+	<?php if ( is_front_page ()
+  	         && get_theme_mod( '_sbcgtheme_topbanner_textarea' ) 
+  	         && strtotime( get_theme_mod( '_sbcgtheme_topbanner_startdate', 'now' ) ) <= current_time('timestamp')   
+  	         && strtotime( get_theme_mod( '_sbcgtheme_topbanner_enddate', '+100 years' ) ) > current_time('timestamp') ) : ?>
+	<section class="banner banner-top">
+  	<div class="container">
+    	<?php _e( get_theme_mod( '_sbcgtheme_topbanner_textarea' ) ) ?>
+  	</div>
+	</section>
+	<?php endif; ?>
 
 	<div id="content" class="container">

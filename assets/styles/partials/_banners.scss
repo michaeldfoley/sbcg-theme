@@ -1,0 +1,39 @@
+//
+// Banners
+// --------------------------------------------------
+
+
+.banner {
+  text-align: center;
+  
+  :first-child {
+    margin-top: 0;
+  }
+}
+
+.banner-top {
+  background-color: $banner-top-bg;
+  color: $baner-top-color;
+  padding-top: $banner-top-padding/2;
+  padding-bottom: $banner-top-padding/2;
+  
+  @media (min-width: $screen-sm) {
+    padding-top: $banner-top-padding;
+    padding-bottom: $banner-top-padding;
+  }
+}
+
+.banner-bottom {
+  background-color: $banner-bottom-bg;
+  color: $banner-bottom-color;
+  padding-top: $banner-bottom-padding;
+  padding-bottom: $banner-bottom-padding;
+  
+  @media (min-width: $screen-xs) {
+    h4 {
+      display: inline-block;
+      margin: 0 1em 0 0;
+      transform: translateY(2px);
+    }
+  }
+}

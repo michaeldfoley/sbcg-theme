@@ -72,7 +72,7 @@ $headings-color:          inherit !default;
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
 $padding-base-vertical:     6px !default;
-$padding-base-horizontal:   16px !default;
+$padding-base-horizontal:   25px !default;
 
 $padding-large-vertical:    10px !default;
 $padding-large-horizontal:  25px !default;
@@ -101,19 +101,37 @@ $card-bg:                   $gray-lighter;
 $card-border:               darken($card-bg, 10%);
 
 
+//== Banners
+//
+//
+$banner-top-bg:             #F2F0DF;
+$baner-top-color:           $text-color;
+$banner-top-padding:        60px;
+
+$banner-bottom-bg:          #459FC9;
+$banner-bottom-color:       #FFFFFF;
+$banner-bottom-padding:     15px;
+
+
 //== Buttons
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                $font-weight-base !default;
+$btn-font-size:                  $font-size-base * .9 !default;
+$btn-font-weight:                $font-weight-strong !default;
+$btn-spacing:                    .08em !default;
 
 $btn-default-color:              #fff !default;
 $btn-default-bg:                 $brand-primary !default;
 $btn-default-border:             darken($btn-default-bg, 5%) !default;
 
-$btn-default-hover-color:        #fff !default;
-$btn-default-hover-bg:           darken($btn-default-bg, 5%) !default;
-$btn-default-hover-border:       darken($btn-default-hover-bg, 5%) !default;
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 #374A85 !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-secondary-color:            $text-color !default;
+$btn-secondary-bg:               #F6E060 !default;
+$btn-secondary-border:           darken($btn-secondary-bg, 5%) !default;
 
 
 //== Nav
