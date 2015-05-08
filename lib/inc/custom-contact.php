@@ -156,4 +156,28 @@ function _sbcgtheme_contact_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', '_sbcgtheme_contact_customizer' );
 
+function _sbcgtheme_contacts() {
+  $general = get_theme_mod( '_sbcgtheme_general_email');
+  $membership = get_theme_mod( '_sbcgtheme_membership_email');
+  $contacts = array();
+  
+  if ( !empty($general) ) { $contacts[ __( 'General', '_sbcgtheme' ) ] = $general; }
+  if ( !empty($membership) && $general !== $membership ) { $contacts[ __( 'Membership', '_sbcgtheme' ) ] = $membership; }
+  
+  return $contacts;
+}
+
+function _sbcgtheme_social() {
+  $facebook = get_theme_mod( '_sbcgtheme_facebook_url');
+  $twitter = get_theme_mod( '_sbcgtheme_twitter_url');
+  $instagram = get_theme_mod( '_sbcgtheme_instagram_url');
+  $social = array();
+  
+  if ( !empty($facebook) ) { $social['facebook'] = $facebook; }
+  if ( !empty($twitter) ) { $social['twitter'] = $twitter; }
+  if ( !empty($instagram) ) { $social['instagram'] = $instagram; }
+  
+  return $social;
+}
+
 ?>

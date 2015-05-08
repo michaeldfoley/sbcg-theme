@@ -1,0 +1,61 @@
+// footer
+// --------------------------------------------------
+
+.footer {
+  padding: 15px 0;
+  background-color: $footer-bg;
+  color: $footer-color;
+  
+  @media (min-width: $screen-xs) {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  a {
+    color: $footer-color;
+    
+    &:hover {
+      color: $footer-color-hover;
+    }
+  }
+}
+
+.footer-emails,
+.footer-address {
+  margin-bottom: ($line-height-computed / 2);
+}
+
+.footer-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: $footer-color;
+  margin: 0 5px;
+}
+
+.footer-info {
+  margin: ($line-height-computed / 2) 0;
+  font-size: .8em;
+  color: darken($footer-color, 10%);
+  
+  a {
+    color: darken($footer-color, 10%);
+  }
+}
+
+.footer-info p {
+  margin-bottom: 0;
+  
+  @media (min-width: $screen-xs) {
+    display: inline-block;
+    + p {
+      margin-left: 7px;
+      
+      &:before {
+        content: "/";
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
+}
