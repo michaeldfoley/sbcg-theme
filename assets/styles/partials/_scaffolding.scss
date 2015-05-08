@@ -59,6 +59,10 @@ a {
   }
 }
 
+a svg {
+  transition: fill .15s ease-out;
+}
+
 
 // Strong
 b, strong {

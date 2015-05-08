@@ -32,6 +32,9 @@
   fill: $footer-color;
   margin: 0 5px;
 }
+a:hover .footer-icon {
+  fill: $footer-color-hover;
+}
 
 .footer-info {
   margin: ($line-height-computed / 2) 0;

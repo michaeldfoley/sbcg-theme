@@ -40,7 +40,7 @@
       	<div class="footer-emails">
         	<?php 
           	$sbcg_contacts = _sbcgtheme_contacts();
-          	$sbcg_contacts_length = count($contacts);
+          	$sbcg_contacts_length = count($sbcg_contacts);
           	
           	foreach ( $sbcg_contacts as $type => $address ) { ?>
           	<div class="footer-email">

@@ -147,7 +147,7 @@ $btn-secondary-border:           darken($btn-secondary-bg, 5%) !default;
 $nav-bg:                         $brand-primary !default;
 $nav-color:                      #ffffff !default;
 $nav-link-color:                 #ffffff !default;
-$nav-link-hover-color:           #ffffff !default;
+$nav-link-hover-color:           rgba($nav-link-color, .9) !default;
 
 
 //== Forms
@@ -246,5 +246,5 @@ $hr-border:                   $gray-lighter !default;
 //##
 
 $footer-bg:                   #6C532A;
-$footer-color:                $gray-lighter;
+$footer-color:                rgba(#FFFFFF, .85);
 $footer-color-hover:          #FFFFFF;
