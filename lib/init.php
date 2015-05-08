@@ -42,6 +42,7 @@ function _sbcgtheme_setup() {
 	// Register nav menus
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', '_sbcgtheme' ),
+		'footer' => __( 'Footer Menu', '_sbcgtheme' ),
 	) );
 
 	// Register Widget Areas

@@ -55,11 +55,12 @@
     	</section>
     	<?php endif; ?>
     	
-    	<nav id="footer-navigation" class="nav-footer" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 
+    	<nav id="footer-navigation" class="nav nav-footer" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'footer', 
   			                        'depth' => 2, 
   			                        'container' => '',
-  			                        'menu_class' => 'nav-footer--list' ) ); ?>
+  			                        'menu_class' => 'nav-footer--list', 
+  			                        'walker' => new Sbcg_Menu() ) ); ?>
 		</nav><!-- #site-navigation -->
     	
   		<div class="footer-info">

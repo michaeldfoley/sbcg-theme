@@ -44,7 +44,7 @@
       </h1>
 		</div>
   
-		<nav id="site-navigation" class="<?php _e( ( is_front_page () ) ? 'nav-primary--homepage ' : '' ) ?>nav-primary collapse" role="navigation">
+		<nav id="site-navigation" class="nav <?php _e( ( is_front_page () ) ? 'nav-primary--homepage ' : '' ) ?>nav-primary collapse" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 
   			                        'depth' => 1, 
   			                        'container' => '',

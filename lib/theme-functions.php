@@ -89,7 +89,25 @@ class Sbcg_Menu extends Walker {
         'parent' => 'menu_item_parent', 
         'id'     => 'db_id' 
     );
-
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+      // depth dependent classes
+      $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+      $display_depth = ( $depth + 1); // because it counts the first submenu as 0
+      $classes = array(
+          'sub-menu',
+          ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
+          ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
+          'menu-depth-' . $display_depth
+          );
+      $class_names = implode( ' ', $classes );
+    
+      // build html
+      $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
+    }
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n";
+    }
     /**
      * At the start of each element, output a <li> and <a> tag structure.
      * If there are custom classes, we'll add those as well. If the item is
@@ -102,11 +120,14 @@ class Sbcg_Menu extends Walker {
         if ( intval($item->object_id) === get_the_ID() ) {
           $classes[] = 'active';
         }
-        $output .= sprintf( "\n<li class='nav-item %s'><a href='%s'>%s</a></li>\n", 
+        $output .= sprintf( "\n<li class='nav-item %s'><a href='%s'>%s</a>\n", 
             implode(' ', $classes),
             $item->url,
             $item->title
         );
+    }
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= "</li>\n";
     }
 }
 
