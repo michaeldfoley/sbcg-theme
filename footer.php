@@ -39,18 +39,20 @@
       	</h4>
       	<div class="footer-emails">
         	<?php 
-          	$contacts = _sbcgtheme_contacts();
-          	$contacts_length = count($contacts);
+          	$sbcg_contacts = _sbcgtheme_contacts();
+          	$sbcg_contacts_length = count($contacts);
           	
-          	foreach ( $contacts as $type => $address ) { ?>
+          	foreach ( $sbcg_contacts as $type => $address ) { ?>
           	<div class="footer-email">
-            	<?php _e( ( $contacts_length > 1 ) ? $type . ': ' : '' ) ?>
+            	<?php _e( ( $sbcg_contacts_length > 1 ) ? $type . ': ' : '' ) ?>
             	<a href="mailto:<?php _e( $address ); ?>"><?php _e( $address ); ?></a>
           	</div>
             <?php } ?>
       	</div>
       	<address class="footer-address">
-      	  <?php _e( get_theme_mod( '_sbcgtheme_address_textarea') ); ?>
+      	  <?php 
+        	  _e( (get_theme_mod( '_sbcgtheme_address_link')) ? "<a href=\"" . get_theme_mod( '_sbcgtheme_address_link') . "\">" . get_theme_mod( '_sbcgtheme_address_textarea') . "</a>" : get_theme_mod( '_sbcgtheme_address_textarea') ); 
+        	  ?>
       	</address>
     	</section>
     	<?php endif; ?>

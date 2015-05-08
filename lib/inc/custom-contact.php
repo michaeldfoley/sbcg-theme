@@ -45,6 +45,22 @@ function _sbcgtheme_contact_customizer( $wp_customize ) {
         )
     );
     
+    $wp_customize->add_setting(
+        '_sbcgtheme_address_link',
+        array(
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        '_sbcgtheme_address_link',
+        array(
+            'label' => __( 'Map Link', '_sbcgtheme' ),
+            'section' => '_sbcgtheme_address_section',
+            'type' => 'text',
+            'priority' => 20
+        )
+    );
+    
     
     /**
      * Emails
