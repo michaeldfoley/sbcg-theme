@@ -5,6 +5,7 @@
 
 // Container element
 .container {
+  width: 100%;
   padding-left: ($grid-column-gutter / 2);
   padding-right: ($grid-column-gutter / 2);
   @include clearfix;

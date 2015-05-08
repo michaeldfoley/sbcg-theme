@@ -120,11 +120,22 @@ class Sbcg_Menu extends Walker {
         if ( intval($item->object_id) === get_the_ID() ) {
           $classes[] = 'active';
         }
-        $output .= sprintf( "\n<li class='nav-item %s'><a href='%s'>%s</a>\n", 
-            implode(' ', $classes),
-            $item->url,
-            $item->title
-        );
+        if ( $item->url === '#' || empty( $item->url ) ) {
+          $output .= sprintf( "\n<li class='nav-item %s %s'><span class='nav-label'>%s</span>\n", 
+              ( $depth === 0 ) ? 'nav-item--top' : 'nav-item--sub',
+              implode(' ', $classes),
+              $item->title
+          );
+          
+        } else {
+          
+          $output .= sprintf( "\n<li class='nav-item %s %s'><a href='%s'>%s</a>\n",  
+              ( $depth === 0 ) ? 'nav-item--top' : 'nav-item--sub',
+              implode(' ', $classes),
+              $item->url,
+              $item->title
+          );
+        }
     }
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
         $output .= "</li>\n";

@@ -246,5 +246,6 @@ $hr-border:                   $gray-lighter !default;
 //##
 
 $footer-bg:                   #6C532A;
-$footer-color:                rgba(#FFFFFF, .85);
+$footer-color:                #FFFFFF;
+$footer-color-alt:            rgba($footer-color, .8);
 $footer-color-hover:          #FFFFFF;
