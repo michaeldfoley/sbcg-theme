@@ -1,6 +1,41 @@
 // Header
 // --------------------------------------------------
 
+
+// Sticky header on scroll
+
+.header--inner {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #ffffff;
+  transition: top 0.15s ease-out;
+}
+
+.header--isHidden {
+  top: $header-height-xs * -1;
+}
+
+.header--homepage {
+  margin-top: $header-height-xs * -1;
+  top: auto;
+}
+
+@media (min-width: $screen-xs) {
+  .header--inner {
+    top: 0;
+  }
+  .header--isHidden {
+    top: $header-height * -1;
+  }
+  .header--homepage {
+    margin-top: $header-height * -1;
+    top: auto;
+  }
+}
+
+
+// Header styles
 .header--inner {
   border-bottom: 1px solid $gray-lighter;
   padding: 0 ($grid-column-gutter / 2);

@@ -24,31 +24,19 @@ sbcg.nav = {
     return true;
   },
   
-  addMenuClass: function() {
-    if ( -1 === this.menu().className.indexOf( 'nav-menu' ) ) {
-  		this.menu().className += ' nav-menu';
-		}
-  },
-  
-  startHidden: function() {
-    if ( -1 === this.container.className.indexOf( 'collapse' ) ) {
-  		this.container.className += ' collapse';
-		}
-  },
-  
   buttonClick: function(container) {
     if ( -1 !== container.className.indexOf( 'in' ) ) {
-			container.className = container.className.replace( ' in', '' );
+			container.classList.remove('in');
 		} else {
-			container.className += ' in';
+			container.classList.add('in');
 		}
   },
   
   init: function() {
     if (this.isReady()) {
       var that = this;
-      this.addMenuClass();
-      this.startHidden();
+      this.menu().classList.add('nav-menu');
+      this.container.classList.add('collapse');
       addEvent(this.button(), 'click', function() { that.buttonClick(that.container); });
     	
     }

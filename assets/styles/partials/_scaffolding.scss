@@ -99,6 +99,11 @@ hr {
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
+  padding-top: $header-height-xs;
+  
+  @media (min-width: $screen-xs) {
+    padding-top: $header-height;
+  }
 }
 
 .page-content {

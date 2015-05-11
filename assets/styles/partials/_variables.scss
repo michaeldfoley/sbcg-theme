@@ -90,12 +90,14 @@ $line-height-small:         1.5 !default;
 //== Sections
 //
 //
+
 $section-gutter:            80px;
 
 
 //== Grid
 //
 //
+
 $grid-columns:              12;
 $grid-column-gutter:        60px;
 
@@ -103,6 +105,7 @@ $grid-column-gutter:        60px;
 //== Cards
 //
 //
+
 $card-bg:                   $gray-lighter;
 $card-border:               darken($card-bg, 10%);
 
@@ -110,6 +113,7 @@ $card-border:               darken($card-bg, 10%);
 //== Banners
 //
 //
+
 $banner-top-bg:             #F2F0DF;
 $baner-top-color:           $text-color;
 $banner-top-padding:        60px;
@@ -117,6 +121,14 @@ $banner-top-padding:        60px;
 $banner-bottom-bg:          #459FC9;
 $banner-bottom-color:       #FFFFFF;
 $banner-bottom-padding:     15px;
+
+
+//== Header
+//
+//
+
+$header-height:             67px;
+$header-height-xs:          114px;
 
 
 //== Buttons
