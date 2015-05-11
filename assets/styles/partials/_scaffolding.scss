@@ -16,7 +16,6 @@
 html {
   font-size: 16px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  min-height: 100%;
   position: relative;
 }
 
@@ -91,4 +90,17 @@ hr {
 // iOS "clickable elements" fix for role="button"
 [role="button"] {
   cursor: pointer;
+}
+
+
+// Sticky footer
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.page-content {
+  flex: 1;
 }

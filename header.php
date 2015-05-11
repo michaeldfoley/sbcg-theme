@@ -67,4 +67,4 @@
 	</section>
 	<?php endif; ?>
 
-	<div id="content" class="container">
+	<div id="content" class="page-content container">
