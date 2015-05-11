@@ -2,13 +2,14 @@
 // --------------------------------------------------
 
 .header--inner {
-  padding: 15px 30px 0;
   border-bottom: 1px solid $gray-lighter;
+  padding: 0 ($grid-column-gutter / 2);
+
   
   @media (min-width: $screen-xs) {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0 0;
+    padding: 0;
   }
 }
 
@@ -48,7 +49,7 @@
 }
 
 .header-title--inner {
-  margin-bottom:15px;
+  margin: 10px 0;
 }
 
 .header-title--homepage {
