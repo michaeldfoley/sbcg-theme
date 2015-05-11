@@ -1,3 +1,4 @@
+/*jshint camelcase: false */
 'use strict';
 module.exports = function(grunt) {
 
@@ -98,10 +99,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     '<%= dirs.js %>/main.min.js': [
-                        '<%= dirs.js %>/source/plugins.js',
-                        '<%= dirs.js %>/vendor/navigation.js',
-                        '<%= dirs.js %>/vendor/skip-link-focus-fix.js',
-                        '<%= dirs.js %>/source/main.js'
+                        '<%= dirs.js %>/source/**/*.js',
                     ]
                 }
             }
