@@ -37,7 +37,7 @@
   		<?php endif; ?>
       
       
-			<h1 class="header-title<?php _e( ( is_front_page () ) ? ' header-title--homepage' : '' ) ?>">
+			<h1 class="header-title <?php _e( ( is_front_page () ) ? 'header-title--homepage' : 'header-title--inner' ) ?>">
   			<a href="<?php _e( esc_url( home_url( '/' ) ) ); ?>" rel="home">
     			<?php _e( ( empty( get_theme_mod( '_sbcgtheme_innertitle_textbox' ) ) ) || is_front_page () ?  bloginfo( 'name' ) : get_theme_mod( '_sbcgtheme_innertitle_textbox' )  )  ?>
     		</a>

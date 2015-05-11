@@ -1,14 +1,6 @@
 // Nav
 // --------------------------------------------------
 
-.header--inner .nav-primary {
-  flex-grow: 1;
-  
-  @media (min-width: $screen-sm) {
-    flex-grow: 0;
-  }
-}
-
 
 // general nav styles
 .nav ul {
@@ -27,15 +19,11 @@
   flex-grow: 1;
 }
 
-// primary nav styles
+
+// Primary nav styles
 .nav-primary--list {
-  margin-bottom: 0;
   align-items: center;
-  
-  @media (min-width: $screen-xs) {
-    font-weight: $font-weight-strong;
-    justify-content: center;
-  }
+  margin-bottom: 0;
   
   .nav-item {
     text-align: center;
@@ -44,30 +32,104 @@
     @media (min-width: $screen-xxs) {
       font-size: $font-size-base;
     }
-    
-    @media (min-width: $screen-sm) {
-      flex-grow: 0;
-    }
   }
   
   a {
     display: block;
-    padding: $padding-large-vertical  $padding-large-horizontal/2;
+    padding: $padding-large-vertical  0;
+    margin: 0 $padding-large-horizontal/2;
     
     @media (min-width: $screen-xs) {
-      padding-left: 0;
-      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
     }
     
     @media (min-width: $screen-sm) {
-      padding-left: $padding-large-horizontal;
-      padding-right: $padding-large-horizontal;
+      margin-left: $padding-large-horizontal;
+      margin-right: $padding-large-horizontal;
     }
   }
 }
 
-// footer nav styles
 
+// Homepage nav styles
+.nav-primary--homepage {
+  padding-left: ($grid-column-gutter / 2);
+  padding-right: ($grid-column-gutter / 2);
+  background: $nav-bg;
+  color: $nav-color;
+  
+  a {
+    color: $nav-link-color;
+    
+    &:hover {
+      color: $nav-link-hover-color;
+    }
+  }
+  
+  .icon-bar {
+    background-color: #ffffff;
+  }
+  
+  @media (min-width: $screen-sm) {
+    .nav-item {
+      flex-grow: 0;
+    }
+  }
+  
+  @media (min-width: $screen-xs) {
+    font-weight: $font-weight-strong;
+    
+    .nav-primary--list {
+      justify-content: center;
+    }
+  }
+}
+
+
+// Inner nav styles
+.header--inner {
+  .nav-primary {
+    flex-grow: 1;
+    text-transform: uppercase;
+    
+    @media (min-width: $screen-sm) {
+      flex-grow: 0;
+      margin-right: $grid-column-gutter/2 - $padding-large-horizontal;
+    }
+  }
+  
+  @media (min-width: $screen-xs) {
+    font-weight: $font-weight-strong;
+    
+    .nav-item {
+      flex-grow: 0;
+    }
+    
+    .nav-primary--list {
+      justify-content: space-around;
+    }
+  }
+  
+  .nav-item {
+    font-size: .85em;
+    letter-spacing: .05em;
+  }
+  
+  a {
+    padding-top: $padding-large-vertical + 5;
+    padding-bottom: $padding-large-vertical + 11;
+  }
+  
+  .active a {
+    font-weight: $font-weight-strong;
+    border-bottom: 2px solid $gray;
+    padding-bottom: $padding-large-vertical + 9;
+  }
+}
+
+
+// Footer nav styles
 .nav-footer--list {
   
   li {
@@ -98,6 +160,7 @@
     }
   }
 }
+
 
 // Toggle more nav items
 .nav-toggle {
@@ -141,32 +204,11 @@
 }
 
 
-// Homepage nav styles
-.nav-primary--homepage {
-  padding-left: ($grid-column-gutter / 2);
-  padding-right: ($grid-column-gutter / 2);
-  background: $nav-bg;
-  color: $nav-color;
-  
-  a {
-    color: $nav-link-color;
-    
-    &:hover {
-      color: $nav-link-hover-color;
-    }
-  }
-  
-  .icon-bar {
-    background-color: #ffffff;
-  }
-}
-
-
-
 // Toggled
 .nav-primary {
   transition: height .35s ease-out;
   height: 48px;
+  overflow: hidden;
 }
 .nav-primary.in {
   height: 96px;
