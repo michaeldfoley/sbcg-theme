@@ -56,7 +56,7 @@ function row_func( $atts, $content = '' ) {
   $args = shortcode_atts( array(
     'class' => 'row',
   ), $atts );
-  $out = sprintf( "\n<section class=\"%s\">%s</div>\n",
+  $out = sprintf( "\n<section class=\"%s\">%s</section>\n",
           $args['class'], 
           do_shortcode( shortcode_unautop( $content ))
         );
