@@ -21,9 +21,17 @@ main {
 // -------------------------
 
 article  {
-  h1, h2, h3, h4, h5, h6, p, ul {
+  h1, h2, h3, h4, h5, h6, p, ul, ol {
     max-width: $screen-sm;
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  ul {
+    margin-bottom: $line-height-computed;
+  }
+  
+  li {
+    margin-bottom: $line-height-computed/2;
   }
 }
