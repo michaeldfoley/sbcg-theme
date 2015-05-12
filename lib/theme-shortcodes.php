@@ -10,7 +10,6 @@
  * Make sure to not add paragraph or link breaks to shortcodes
  *
  */
- 
 if( !function_exists('wpex_fix_shortcodes') ) {
 	function wpex_fix_shortcodes($content){   
 		$array = array (
@@ -29,7 +28,6 @@ if( !function_exists('wpex_fix_shortcodes') ) {
  * Adds advertising cards
  *
  */
- 
 function cards_func( $atts, $content = '' ) {
   $args = shortcode_atts( array(
     'icon' => '',
