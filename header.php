@@ -6,6 +6,8 @@
  *
  * @package _sbcgtheme
  */
+ 
+$page_id = get_queried_object_id();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -25,7 +27,7 @@
 
 	<a class="skip-link sr" href="#content"><?php _e( 'Skip to content', '_sbcgtheme' ); ?></a>
 
-	<header id="masthead" class="header<?php _e( ( is_front_page () ) ? ' header--homepage' : ' header--inner' ) ?>" role="banner">
+	<header id="masthead" class="header <?php _e( ( is_front_page () ) ? 'header--homepage' : 'header--inner' ) ?>" role="banner">
 		<div class="header-branding<?php _e( ( is_front_page () ) ? ' header-branding--homepage ' : '' ) ?>">
   		<?php if (is_front_page ()) : ?>
   		<div class="header-logo">
@@ -66,5 +68,19 @@
   	</div>
 	</section>
 	<?php endif; ?>
-
+  
+  <?php if ( has_post_thumbnail( $page_id ) ) : 
+        $img_sizes = array( 'bp-xxs', 'bp-xs', 'bp-sm', 'bp-md', 'bp-lg' );
+        $img_srcset = '';
+        $img_id = get_post_thumbnail_id( $page_id );
+        
+        foreach( $img_sizes as $size ) {
+          $img_srcset .= wp_get_attachment_image_src( $img_id, $size )[0] . ' ' . wp_get_attachment_image_src( $img_id, $size )[1] . 'w, ';
+        }
+        
+  ?>
+    <div class="header-thumb">
+      <img src="<?php _e( wp_get_attachment_image_src( $img_id, 'full' )[0] ); ?>" srcset="<?php _e( $img_srcset ); ?>" alt="<?php _e( get_post_meta($img_id , '_wp_attachment_image_alt', true) ) ?>">
+   </div>
+	<?php endif; ?>
 	<div id="content" class="page-content container">

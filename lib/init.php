@@ -64,7 +64,11 @@ function _sbcgtheme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Add Image Sizes
-	// add_image_size( $name, $width = 0, $height = 0, $crop = false );
+	add_image_size( 'bp-xxs', 384 );
+	add_image_size( 'bp-xs', 640 );
+	add_image_size( 'bp-sm', 832 );
+	add_image_size( 'bp-md', 992 );
+	add_image_size( 'bp-lg', 1200 );
 
 	// Setup the WordPress core custom background feature.
 /*

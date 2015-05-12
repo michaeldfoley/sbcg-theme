@@ -3,7 +3,6 @@
 
 
 // Sticky header on scroll
-
 .header--inner {
   position: fixed;
   width: 100%;
@@ -35,9 +34,33 @@
 }
 
 
+// Header Image
+.header-thumb {
+  max-height: $screen-xs * .4;
+  max-height: 40vh;
+  overflow: hidden;
+	display: flex;
+	align-items: center;
+	margin-top: -2px;
+  
+  @media (min-height: $screen-xs) {
+    max-height: $screen-xs * .4;
+  }
+  
+  @media (min-width: $screen-sm) {
+    max-height: $screen-xs * .6;
+    max-height: 60vh;
+  }
+  
+  @media (min-height: $screen-xs) and (min-width: $screen-sm) {
+    max-height: $screen-xs * .6;
+  }
+}
+
+
 // Header styles
 .header--inner {
-  border-bottom: 1px solid $gray-lighter;
+  box-shadow: 0 0 1px rgba(0,0,0,.2);
   padding: 0 ($grid-column-gutter / 2);
 
   
