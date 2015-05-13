@@ -30,13 +30,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "partials/type";
 @import "partials/buttons";
 
-// Content specific
+// Sections
 @import "partials/header";
 @import "partials/footer";
 @import "partials/sections";
 @import "partials/nav";
+
+// Content specific
 @import "partials/cards";
 @import "partials/banners";
+@import "partials/sponsors";
 
 // Helpers
 @import "partials/accessibility"
