@@ -64,6 +64,8 @@ function _sbcgtheme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Add Image Sizes
+	add_image_size( 'featured', 0, 300 );
+	add_image_size( 'featured-2x', 0, 600 );
 	add_image_size( 'bp-xxs', 384 );
 	add_image_size( 'bp-xs', 640 );
 	add_image_size( 'bp-sm', 832 );
