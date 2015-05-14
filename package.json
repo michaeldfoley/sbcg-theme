@@ -1,5 +1,6 @@
 {
-  "name": "SBCG-Wordpress-Theme",
+  "name": "sbcg-wordpress-theme",
+  "description": "Wordpress template for the South Brooklyn Children's Garden",
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
@@ -15,5 +16,15 @@
     "grunt-rsync": "~0.6.2",
     "grunt-svg-sprite": "^1.1.2",
     "load-grunt-tasks": "~3.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michaeldfoley/sbcg-theme.git"
+  },
+  "author": "Michael Foley <michaeldfoley@gmail.com>",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/michaeldfoley/sbcg-theme/issues"
+  },
+  "homepage": "https://github.com/michaeldfoley/sbcg-theme"
 }
