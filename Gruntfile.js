@@ -11,6 +11,7 @@ module.exports = function(grunt) {
           css: 'assets/styles',
           img: 'assets/images',
           js:  'assets/js',
+          npm: 'node_modules'
         },
 
         // watch for changes and trigger sass, jshint, uglify and livereload
@@ -100,6 +101,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%= dirs.js %>/main.min.js': [
                         '<%= dirs.js %>/source/**/*.js',
+                        '<%= dirs.npm %>/lazysizes/lazysizes.js'
                     ]
                 }
             }
