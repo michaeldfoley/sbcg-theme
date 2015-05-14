@@ -83,4 +83,12 @@ $page_id = get_queried_object_id();
       <img src="<?php _e( wp_get_attachment_image_src( $img_id, 'full' )[0] ); ?>" srcset="<?php _e( $img_srcset ); ?>" alt="<?php _e( get_post_meta($img_id , '_wp_attachment_image_alt', true) ) ?>">
    </div>
 	<?php endif; ?>
+	
+	
+	<?php
+  if ( is_front_page() && !has_post_thumbnail( $page_id ) ) :
+  	require get_template_directory() . '/lib/inc/header-gallery.php';
+  endif;
+  ?>
+	
 	<div id="content" class="page-content container">
