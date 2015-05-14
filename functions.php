@@ -30,6 +30,11 @@ require get_template_directory() . '/lib/theme-helpers.php';
 require get_template_directory() . '/lib/theme-shortcodes.php';
 
 /**
+ * Taxonomies for use in this theme
+ */
+require get_template_directory() . '/lib/theme-taxonomies.php';
+
+/**
  * Implement the Custom Header feature.
  */
 // require get_template_directory() . '/lib/inc/custom-header.php';
