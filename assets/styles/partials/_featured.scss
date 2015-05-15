@@ -3,13 +3,17 @@
 
 
 .featured-images {
-  height: 300px;
+  height: 250px;
   overflow: scroll;
   white-space: nowrap;
   display: none;
   
   @media (min-device-width: $screen-sm) {
     display: flex;
+  }
+  
+  @media (min-width: $screen-sm) {
+    height: 300px;
   }
 }
 
