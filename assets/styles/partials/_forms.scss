@@ -206,6 +206,15 @@ input[type="search"] {
 }
 
 
+// Container
+//
+// Seperate the form from other elements
+
+.form-container {
+  margin-top: $line-height-computed * 2;
+}
+
+
 // Form groups
 //
 // Designed to help with the organization and spacing of vertical forms. For
@@ -301,6 +310,10 @@ input[type="checkbox"] {
 // Gravity forms
 //
 // Customizations specific to gravity forms
+
+.gform_wrapper {
+  margin-bottom: $line-height-computed;
+}
 
 .gform_fields {
   padding: 0;
