@@ -2,6 +2,7 @@
 // --------------------------------------------------
 
 
+// Basic Styles
 .em-calendar {
   transition: opacity .3s ease-out;
   animation: fade-in .3s ease-out;
@@ -67,6 +68,30 @@
 .eventful-post {
   background-color: $gray-lighter;
   opacity: .6;
+}
+
+
+// Indicators
+.event-open,
+.event-booked {
+  &:before {
+    display: inline-block;
+    height: .6em;
+    width: .6em;
+    margin: 0 5px .1em 0;
+    font-size: .8em;
+    line-height: 1;
+  }
+}
+
+.event-open:before {
+  background-color: $brand-primary;
+  content: '';
+  border-radius: 50%;
+}
+
+.event-booked:before {
+  content: '✓';
 }
 
 
