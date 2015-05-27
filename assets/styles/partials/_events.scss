@@ -1,0 +1,134 @@
+// events calendar
+// --------------------------------------------------
+
+
+.em-calendar {
+  transition: opacity .3s ease-out;
+  animation: fade-in .3s ease-out;
+}
+
+.fullcalendar {
+  width: 100%;
+  
+  thead {
+    text-align: center;
+  }
+  td {
+    width: 14.285%;
+    vertical-align: top;
+  }
+}
+
+.month_name {
+  font-family: $headings-font-family;
+  font-size: $font-size-h3;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+  padding-bottom: $line-height-computed;
+}
+
+.days-names td {
+  font-weight: $font-weight-strong;
+  padding: 0 7px $line-height-computed/2;
+}
+
+.eventless-pre,
+.eventful-pre,
+.eventless,
+.eventful,
+.eventless-today,
+.eventful-today,
+.eventless-post,
+.eventful-post
+.eventless-post,
+.eventful-post {
+  border: 1px solid lighten($gray-light, 20%);
+  padding: 5px 7px;
+  
+  a {
+    color: $text-color;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    ul {
+      padding-left: 15px;
+      font-size: .8em;
+    }
+  }
+}
+
+.eventless-pre,
+.eventful-pre,
+.eventless-post,
+.eventful-post {
+  background-color: $gray-lighter;
+  opacity: .6;
+}
+
+
+// ajax states
+.em-calendar-wrapper {
+  position: relative;
+  
+  .loading,
+  .loading:before,
+  .loading:after {
+    background: $brand-primary;
+    animation: loader 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .loading:before,
+  .loading:after {
+    margin-top: -2em;
+    content: '';
+  }
+  .loading:before {
+    left: -1.5em;
+    animation-delay: -0.32s;
+  }
+  .loading {
+    text-indent: -9999em;
+    font-size: 11px;
+    animation-delay: -0.16s;
+    transform: translate(-50%, -50%);
+    z-index: $zindex-1;
+  }
+  .loading:after {
+    left: 1.5em;
+  }
+}
+
+.is-loading .em-calendar {
+  opacity: .4;
+}
+
+@keyframes loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 $brand-primary;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em $brand-primary;
+    height: 5em;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
