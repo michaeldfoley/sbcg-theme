@@ -70,6 +70,11 @@
   opacity: .6;
 }
 
+.eventless-today,
+.eventful-today > a {
+  color: $brand-secondary;
+}
+
 
 // Indicators
 .event-open,
