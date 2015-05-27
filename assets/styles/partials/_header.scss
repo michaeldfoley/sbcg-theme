@@ -9,6 +9,7 @@
   top: 0;
   background-color: #ffffff;
   transition: top 0.15s ease-out;
+  z-index: $zindex-1;
 }
 
 .header--isHidden {
