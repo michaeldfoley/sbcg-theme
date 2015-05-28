@@ -14,9 +14,115 @@
   thead {
     text-align: center;
   }
-  td {
-    width: 14.285%;
-    vertical-align: top;
+  
+  table, thead, tbody, tr, th, td {
+    display: block;
+  }
+  
+  .days-names,
+  .eventless-pre,
+  .eventful-pre,
+  .eventless,
+  .eventless-today,
+  .eventless-post,
+  .eventful-post {
+    display: none;
+  }
+  
+  thead tr {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .month_name {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+  .eventful,
+  .eventful-today {
+    display: flex;
+    margin-bottom: 30px;
+    
+    $calendar-color: lighten( adjust-hue($brand-primary, -15), 5%);
+        
+    > a {
+      width: 2.5em;
+      text-align: center;
+      background: $calendar-color;
+      border: 1px solid darken($calendar-color, 5%);
+      color: #fff;
+      padding: 10px 0;
+      margin: 6px 20px 0 0;
+      font-size: 1.2em;
+      line-height: 1;
+      font-weight: $font-weight-strong;
+      box-shadow: 0 -2px #fff, 0 -6px darken($brand-primary, 15%);
+    }
+    ul {
+      flex: 1;
+      align-self: center;
+      margin: 0;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: $screen-sm){
+    
+    table {
+      display: table;
+    }
+    thead {
+      display: table-header-group;
+    }
+    tbody {
+      display: table-row-group;
+    }
+    tr, 
+    thead tr, 
+    .days-names {
+      display: table-row;
+    }
+    td, th,
+    .eventless-pre,
+    .eventful-pre,
+    .eventless,
+    .eventful,
+    .eventless-today,
+    .eventful-today,
+    .eventless-post,
+    .eventful-post {
+      display: table-cell;
+    }
+  
+    td {
+      width: 14.285%;
+      vertical-align: top;
+    }
+    
+    .eventful,
+    .eventful-today {
+      margin-bottom: 0;
+          
+      > a {
+        width: auto;
+        text-align: left;
+        background: none;
+        border: none;
+        color: $text-color;
+        padding: 0;
+        margin: 0;
+        font-size: 1em;
+        line-height: $line-height-base;
+        font-weight: $font-weight-base;
+        box-shadow: none;
+      }
+      ul {
+        margin-bottom: $line-height-computed;
+      }
+    }
   }
 }
 
@@ -44,8 +150,11 @@
 .eventful-post
 .eventless-post,
 .eventful-post {
-  border: 1px solid lighten($gray-light, 20%);
-  padding: 5px 7px;
+  
+  @media (min-width: $screen-sm){
+    border: 1px solid lighten($gray-light, 20%);
+    padding: 5px 7px;
+  }
   
   a {
     color: $text-color;
@@ -77,7 +186,7 @@
 
 
 // Indicators
-.event-open,
+.event-open:not(.event-past),
 .event-booked {
   &:before {
     display: inline-block;
