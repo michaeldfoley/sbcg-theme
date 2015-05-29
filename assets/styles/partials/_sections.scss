@@ -20,11 +20,15 @@ main {
 // Article
 // -------------------------
 
+.text-width {
+  max-width: $screen-sm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 article  {
   h1, h2, h3, h4, h5, h6, p, ul, ol, form {
-    max-width: $screen-sm;
-    margin-left: auto;
-    margin-right: auto;
+    @extend .text-width;
   }
   
   ul {
