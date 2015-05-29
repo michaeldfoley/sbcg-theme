@@ -3,11 +3,6 @@
 
 
 // Basic Styles
-.em-calendar {
-  transition: opacity .3s ease-out;
-  animation: fade-in .3s ease-out;
-}
-
 .fullcalendar {
   width: 100%;
   
@@ -208,67 +203,3 @@
 .event-booked:before {
   content: '✓';
 }
-
-
-// ajax states
-.em-calendar-wrapper {
-  position: relative;
-  
-  .loading,
-  .loading:before,
-  .loading:after {
-    background: $brand-primary;
-    animation: loader 1s infinite ease-in-out;
-    width: 1em;
-    height: 4em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  .loading:before,
-  .loading:after {
-    margin-top: -2em;
-    content: '';
-  }
-  .loading:before {
-    left: -1.5em;
-    animation-delay: -0.32s;
-  }
-  .loading {
-    text-indent: -9999em;
-    font-size: 11px;
-    animation-delay: -0.16s;
-    transform: translate(-50%, -50%);
-    z-index: $zindex-1;
-  }
-  .loading:after {
-    left: 1.5em;
-  }
-}
-
-.is-loading .em-calendar {
-  opacity: .4;
-}
-
-@keyframes loader {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0 $brand-primary;
-    height: 4em;
-  }
-  40% {
-    box-shadow: 0 -2em $brand-primary;
-    height: 5em;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: .4;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
