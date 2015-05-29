@@ -69,8 +69,13 @@ input[type="submit"] {
 input[type="submit"] {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
-.btn-secondary {
+.btn-secondary,
+input[type="submit"].btn-secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-error,
+input[type="submit"].btn-error {
+  @include button-variant($btn-error-color, $btn-error-bg, $btn-error-border);
 }
 
 

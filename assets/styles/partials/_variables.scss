@@ -163,6 +163,10 @@ $btn-secondary-color:            $text-color !default;
 $btn-secondary-bg:               #F6E060 !default;
 $btn-secondary-border:           darken($btn-secondary-bg, 5%) !default;
 
+$btn-error-color:                #fff !default;
+$btn-error-bg:                   #F64744 !default;
+$btn-error-border:               darken($btn-error-bg, 5%) !default;
+
 
 //== Nav
 //
