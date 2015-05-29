@@ -1,8 +1,6 @@
 // events calendar
 // --------------------------------------------------
 
-
-// Basic Styles
 .fullcalendar {
   width: 100%;
   
@@ -181,25 +179,112 @@
 }
 
 
-// Indicators
-.event-open:not(.event-past),
-.event-booked {
-  &:before {
-    display: inline-block;
-    height: .6em;
-    width: .6em;
-    margin: 0 5px .1em 0;
-    font-size: .8em;
-    line-height: 1;
+
+// Booking indicators
+.em-calendar {
+  .event-open:not(.event-past),
+  .event-booked {
+    &:before {
+      display: inline-block;
+      height: .6em;
+      width: .6em;
+      margin: 0 5px .1em 0;
+      font-size: .8em;
+      line-height: 1;
+    }
+  }
+  
+  .event-open:before {
+    background-color: $brand-primary;
+    content: '';
+    border-radius: 50%;
+  }
+  
+  .event-booked:before {
+    content: '✓';
   }
 }
 
-.event-open:before {
-  background-color: $brand-primary;
-  content: '';
-  border-radius: 50%;
+
+// Events Details
+// --------------------------------------------------
+
+.event-title {
+  margin-top: 0;
 }
 
-.event-booked:before {
-  content: '✓';
+.event-details, 
+.event-form {
+  @extend .text-width;
+}
+
+.event-date,
+.event-time {
+  color: $text-color;
+}
+
+@media (min-width: $screen-xs) {
+  .event-date,
+  .event-time {
+    display: inline-block;
+  }
+  
+  .event-date + .event-time {
+    &:before {
+      content: ' | ';
+    }
+  }
+}
+
+.event-description {
+  margin-top: $line-height-computed;
+}
+
+.event-meta--categories,
+.event-meta--tags {
+  list-style: none;
+  padding: 0;
+  margin-top: $line-height-computed;
+}
+
+
+// Events List
+// --------------------------------------------------
+
+.events {
+  list-style: none;
+  padding: 0;
+}
+
+.event-group-heading {
+  padding: $padding-small-vertical $padding-small-horizontal;
+  background-color: $gray-lighter;
+}
+
+.em-cancel-button {
+  @extend .btn-error;
+}
+
+.em-booking-button {
+  @extend .btn-primary;
+}
+
+.event-item {
+  display: flex;
+  padding: $padding-large-vertical*1.5 $padding-base-horizontal;
+  margin: 0;
+  transition: background-color .15s ease-out;
+  
+  &:hover {
+    background-color: lighten( adjust-hue( $brand-primary, -20 ), 45%);
+  }
+}
+
+.event-item-details {
+  flex: 1;
+  display:block;
+}
+
+.event-booking-button .button {
+  @extend .btn-sm;
 }
