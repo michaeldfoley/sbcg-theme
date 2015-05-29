@@ -257,8 +257,10 @@
 }
 
 .event-group-heading {
-  padding: $padding-small-vertical $padding-small-horizontal;
+  padding: $padding-small-vertical $grid-column-gutter/2;
   background-color: $gray-lighter;
+  margin-left: $grid-column-gutter/-2;
+  margin-right: $grid-column-gutter/-2;
 }
 
 .em-cancel-button {
@@ -268,12 +270,10 @@
 .em-booking-button {
   @extend .btn-primary;
 }
-
 .event-item {
-  display: flex;
   border: 1px solid transparent;
-  padding: $padding-large-vertical*1.5 $padding-base-horizontal;
-  margin: 0;
+  padding: $padding-large-vertical*1.5 $grid-column-gutter/2;
+  margin: 0 $grid-column-gutter/-2;
   transition: background-color .15s ease-out, border .15s ease-out;
   
   &:hover {
@@ -283,10 +283,35 @@
 }
 
 .event-item-details {
-  flex: 1;
   display:block;
 }
 
 .event-booking-button .button {
   @extend .btn-sm;
+  margin-top: 20px;
+}
+
+@media (min-width: $screen-xs) {
+  .event-group-heading {
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .event-item {
+    display: flex;
+    padding-left: $padding-large-horizontal;
+    padding-right: $padding-large-horizontal;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .event-item-details {
+    flex: 1;
+  }
+
+  .event-booking-button .button {
+    margin-top: 0;
+  }
 }
