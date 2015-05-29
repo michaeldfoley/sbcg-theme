@@ -30,8 +30,13 @@
   margin-top: $line-height-computed;
 }
 
-.event-form {
+.event-form,
+.em-booking-form + .em-booking-login {
   margin-top: $grid-column-gutter;
+}
+
+.em-booking--unavailable {
+  font-weight: $font-weight-strong;
 }
 
 @media (min-width: $screen-xs) {
@@ -46,6 +51,11 @@
       padding: 0 $grid-column-gutter;
     }
   }
+
+  .em-booking-form + .em-booking-login {
+    margin-top: 0;
+    border-left: 1px solid $gray-light;
+  }
 }
 
 .em-booking-form,
@@ -53,12 +63,9 @@
   max-width: none;
 }
 
-.em-booking-form + .em-booking-login {
-  border-left: 1px solid $gray-light;
-}
-
+.em-booking-form-heading,
 .em-booking-login-heading {
-  margin-top: -48px;
+  margin-top: 0px;
 }
 
 .em-booking-login-submit {
@@ -67,4 +74,40 @@
 
 .em-booking-login-lostpass {
   margin-top: 10px;
+}
+
+
+// messages
+
+.em-booking-message {
+  background: $state-info-bg;
+  border: 1px solid $state-info-border;
+  color: $state-info-text;
+  padding: $padding-base-vertical*2 $padding-base-horizontal;
+  width: 100%;
+  margin-bottom: $grid-column-gutter / 2;
+  border-radius: 5px;
+  animation: fade-in .3s ease-out;
+  
+  p {
+    margin-bottom: $line-height-computed/2;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  
+  @media (min-width: $screen-xs) {
+    .em-booking--available.em-booking--unknown & {
+      margin-left: $grid-column-gutter;
+      margin-right: $grid-column-gutter;
+    }
+  }
+}
+
+.em-booking-message-error {
+  background: $state-error-bg;
+  border-color: $state-error-border;
+  color: $state-error-text;
 }
