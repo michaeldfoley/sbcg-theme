@@ -271,12 +271,14 @@
 
 .event-item {
   display: flex;
+  border: 1px solid transparent;
   padding: $padding-large-vertical*1.5 $padding-base-horizontal;
   margin: 0;
-  transition: background-color .15s ease-out;
+  transition: background-color .15s ease-out, border .15s ease-out;
   
   &:hover {
     background-color: lighten( adjust-hue( $brand-primary, -20 ), 45%);
+    border-color: $gray-lighter;
   }
 }
 
