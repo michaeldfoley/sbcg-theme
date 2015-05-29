@@ -1,0 +1,52 @@
+//
+// Tags
+// --------------------------------------------------
+
+
+.tag {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-base;
+  line-height: 1.2;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $tag-bg;
+  border: 1px solid $tag-border;
+  border-radius: 3px;
+  color: $tag-color;
+  
+  a {
+    color: #fff;
+  }
+}
+
+.tag-icon {
+  height: $font-size-small;
+  fill: #fff;
+  text-align: left;
+  margin-bottom: .15em;
+  margin-right: 5px;
+
+  .tag-fieldtrip & {
+    width: $font-size-small * 1.114803625;
+  }
+  .tag-openhours & {
+    width: $font-size-small * 1.083333333;
+  }
+  .tag-party & {
+    width: $font-size-small;
+  }
+  .tag-public & {
+    width: $font-size-small * 1.226688103;
+  }
+  .tag-watering & {
+    width: $font-size-small * 1.144827586;
+    margin-top:2px;
+  }
+  .tag-workday & {
+    width: $font-size-small * .90397351;
+  }
+}
