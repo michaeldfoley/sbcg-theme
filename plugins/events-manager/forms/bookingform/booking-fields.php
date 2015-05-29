@@ -8,6 +8,7 @@
 $current_user = wp_get_current_user();
 ?>
 <?php if( apply_filters('em_booking_form_show_register_form',true) ): ?>
+	<h3 class="em-booking-form-heading"><?php esc_html_e('Sign Up!','dbem'); ?></h3>
 	<?php //User can book an event without registering, a username will be created for them based on their email and a random password will be created. ?>
 	<input type="hidden" name="register_user" value="1" />
 	
