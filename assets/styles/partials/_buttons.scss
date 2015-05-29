@@ -79,6 +79,15 @@ input[type="submit"].btn-error {
 }
 
 
+// Button Transitions
+// --------------------------------------------------
+.btn,
+.button,
+input[type="submit"] {
+  transition: all .3s ease-out;
+}
+
+
 // Block button
 // --------------------------------------------------
 
