@@ -12,5 +12,21 @@ if (window.jQuery) {
 	  }).on('em_calendar_load', function() {
   		$(this).removeClass('is-loading');
 	  });
+	  
+	  $(document).on('submit', '.em-booking-form', function(){
+  	  console.log('submit');
+  	  $(this).addClass('is-loading').prepend('<div class="loading"></div>');
+  	  $('#em-booking-submit').val('Submitting...');
+    }).on('em_booking_complete', function(){
+  	  $(this).removeClass('is-loading');
+  	  $('.loading').remove();
+	  }).on('em_booking_success', function(){
+  	  $('#em-booking-submit').val('Success');
+  	}).on('em_booking_error, em_booking_ajax_error', function(){
+  	  $('#em-booking-submit').addClass('btn-error').val('Error');
+  	  setTimeout(function(){ 
+    	  $('#em-booking-submit').removeClass('btn-error').val('Sign Up!'); 
+      }, 3000);
+  	});
   });
 }
