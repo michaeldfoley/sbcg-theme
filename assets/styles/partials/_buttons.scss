@@ -20,7 +20,7 @@ input[type="submit"] {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  padding: $padding-small-vertical $padding-base-horizontal;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
   font-size: $btn-font-size;
   line-height: $line-height-base;
   letter-spacing: $btn-spacing;
@@ -60,6 +60,19 @@ input[type="submit"] {
     opacity: .65;
   }
 }
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-sm {
+  padding: $btn-sm-padding-vertical $btn-sm-padding-horizontal;
+  font-size: $btn-sm-font-size;
+  font-weight: $btn-sm-font-weight;
+  line-height: $line-height-base * $btn-sm-font-size;
+  letter-spacing: $btn-sm-spacing;
+}
+
 
 
 // Button Colors

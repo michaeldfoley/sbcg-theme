@@ -148,11 +148,19 @@ $header-height-xs:          114px;
 
 //== Buttons
 //
-//## For each of Bootstrap's buttons, define text, background and border color.
+//## For each button, define text, background and border color.
 
 $btn-font-size:                  $font-size-base * .9 !default;
 $btn-font-weight:                $font-weight-strong !default;
 $btn-spacing:                    .08em !default;
+$btn-padding-vertical:           $padding-small-vertical;
+$btn-padding-horizontal:         $padding-base-horizontal;
+
+$btn-sm-font-size:               $font-size-base * .8 !default;
+$btn-sm-font-weight:             $font-weight-strong !default;
+$btn-sm-spacing:                 .08em !default;
+$btn-sm-padding-vertical:        $padding-small-vertical;
+$btn-sm-padding-horizontal:      floor($padding-base-horizontal * .9);
 
 $btn-default-color:              #fff !default;
 $btn-default-bg:                 $brand-primary !default;
