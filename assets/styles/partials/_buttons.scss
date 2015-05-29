@@ -7,7 +7,8 @@
 // --------------------------------------------------
 
 .btn,
-.button {
+.button,
+input[type="submit"] {
   display: inline-block;
   margin-bottom: 0;
   font-family: $font-family-base;
@@ -64,7 +65,8 @@
 // Button Colors
 // --------------------------------------------------
 
-.btn-primary {
+.btn-primary,
+input[type="submit"] {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 .btn-secondary {
