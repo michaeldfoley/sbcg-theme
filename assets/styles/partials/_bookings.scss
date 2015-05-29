@@ -34,15 +34,17 @@
   margin-top: $grid-column-gutter;
 }
 
-.em-booking--available.em-booking--unknown {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 $grid-column-gutter * -1;
-  
-  .em-booking-form,
-  .em-booking-login {
-    flex: 1;
-    padding: 0 $grid-column-gutter;
+@media (min-width: $screen-xs) {
+  .em-booking--available.em-booking--unknown {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 $grid-column-gutter * -1;
+    
+    .em-booking-form,
+    .em-booking-login {
+      flex: 1;
+      padding: 0 $grid-column-gutter;
+    }
   }
 }
 
