@@ -33,15 +33,30 @@ function cards_func( $atts, $content = '' ) {
     'icon' => '',
     'title' => '',
     'link' => '',
+    'background' => '',
   ), $atts );
   
+  $background = trim($args['background']);
+  
+  if ( preg_match("/([^\s]+(\.(jpe?g|png|gif|bmp|svg))$)/i", $background) ) {
+    $background = "url('{$background}')";
+    
+  } else if ( !preg_match("/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/", $background) ) {
+    $background = "";
+  }
+  
+  $is_bgimg = strpos($background, "url(");
+  
   $out = sprintf( "%s<div class=\"card-content\">%s%s</div>", 
-          ($args['icon'] !== '') ? "<svg class=\"card-icon\" role=\"presentation\"><use xlink:href=\"" . get_stylesheet_directory_uri() . "/assets/images/sprite.symbol.svg#{$args['icon']}\" /></svg>" : "",
-          ($args['title'] !== '') ? "<h4 class=\"card-title\">{$args['title']}</h4>" : "",
-          $content
-        );
-  $out = sprintf( "\n<div class=\"card\">%s</div>\n",
-          ($args['link'] !== '') ? "<a href=\"{$args['link']}\">{$out}</a>" : $out
+          ( $args['icon'] !== "" && $is_bgimg === false ) ? "<svg class=\"card-icon\" role=\"presentation\"><use xlink:href=\"" . get_stylesheet_directory_uri() . "/assets/images/sprite.symbol.svg#{$args['icon']}\" /></svg>" : "",
+          ( $args['title'] !== "" ) ? "<h4 class=\"card-title\">{$args['title']}</h4>" : "",
+          ( $is_bgimg === false ) ? $content : ''
+        );  
+        
+  $out = sprintf( "\n<div class=\"card%s\"%s>%s</div>\n",
+          ( $is_bgimg !== false ) ? " card-bg" : "",
+          ( !empty($background) ) ? " style=\"background:{$background}\"" : "",
+          ($args['link'] !== "") ? "<a href=\"{$args['link']}\">{$out}</a>" : $out
         );
             
   return $out;
