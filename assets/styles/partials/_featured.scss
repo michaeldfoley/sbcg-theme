@@ -5,6 +5,7 @@
 .featured-images {
   height: 250px;
   overflow: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   white-space: nowrap;
   display: none;
   
