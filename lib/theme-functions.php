@@ -201,6 +201,16 @@ function mb_remove_script_version( $src ){
 }
 
 /**
+ * Remove Admin Bar For Non-Admins
+ */
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+  if (!current_user_can('administrator') && !is_admin()) {
+    show_admin_bar(false);
+  }
+}
+
+/**
  * Remove Read More Jump
  */
 function mb_remove_more_jump_link( $link ) {

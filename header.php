@@ -27,7 +27,8 @@ $page_id = get_queried_object_id();
 
 	<a class="skip-link sr" href="#content"><?php _e( 'Skip to content', '_sbcgtheme' ); ?></a>
 
-	<header id="masthead" class="header <?php _e( ( is_front_page () ) ? 'header--homepage' : 'header--inner' ) ?>" role="banner">
+	<header id="masthead" class="header <?php _e( ( is_front_page () ) ? 'header--homepage' : 'header--inner' ); 
+  	_e( ( !current_user_can('administrator') && !is_admin() ) ? '' : ' header--admin' ); ?>" role="banner">
 		<div class="header-branding<?php _e( ( is_front_page () ) ? ' header-branding--homepage ' : '' ) ?>">
   		<?php if (is_front_page ()) : ?>
   		<div class="header-logo">
