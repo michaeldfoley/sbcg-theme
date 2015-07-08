@@ -205,7 +205,7 @@ $input-border:                   #ccc !default;
 $input-border-radius:            2px !default;
 
 //** Border color for inputs on focus
-$input-border-focus:             #66afe9 !default;
+$input-border-focus:             $brand-secondary !default;
 
 //** Placeholder text color
 $input-color-placeholder:        #999 !default;

@@ -212,6 +212,13 @@ input[type="search"] {
 
 .form-container {
   margin-top: $line-height-computed * 2;
+  
+  @media (min-width: $screen-xs) {
+    padding: 30px 40px;
+    border: 1px solid $gray-lighter;
+    border-radius: 5px;
+    max-width: $screen-xs;
+  }
 }
 
 
@@ -324,6 +331,11 @@ input[type="checkbox"] {
   margin-bottom: $line-height-computed;
 }
 
+.gform_title {
+  margin-top: 0;
+  margin-bottom: $line-height-computed;
+}
+
 .gfield_description {
   font-size: .9em;
 }
@@ -347,30 +359,131 @@ input[type="checkbox"] {
   padding-bottom: 15px;
 }
 
-.ginput_container {
+.ginput_container,
+.ginput_complex {
   display: flex;
-  
-  label {
-    font-weight: $font-weight-base;
-  }
+  flex-wrap: wrap;
+}
+
+.ginput_container label {
+  font-weight: $font-weight-base;
+}
+
+.ginput_full {
+  display: block;
+  width: 100%;
 }
 
 .ginput_left,
 .ginput_right {
-  width: 50%;
+  flex: 1;
 }
 
-.ginput_left {
+.ginput_left,
+.address_state {
   margin-right: 20px;
+}
+
+
+// Gravity forms: radio buttons and checkboxes
+
+.gfield_radio {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    margin-bottom: 0px;
+  }
+  
+  input {
+    margin-right: 10px;
+  }
 }
 
 
 // Gravity forms: buttons
 
-.gform_button {
+.gform_button,
+.gform_next_button {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
+
+// Gravity forms: icons
+
+.gfield_list_icons {
+  width: 2.7em;
+}
+
+// Gravity forms: complex fields
+
+.ginput_complex label{
+  margin-top: $line-height-computed/2;
+}
+
+.ginput_complex .ginput_full:first-child label:first-child {
+  margin-top: 0;
+}
+
+// Gravity forms: credit card
+
+.gform_card_icon_container {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.gform_card_icon {
+  width: 50px;
+  height: 32px;
+  margin-right: 7px;
+  display: inline-block;
+  background-size: auto 100%;
+  @include text-hide();
+  transition: opacity .2s ease-out;
+}
+
+.gform_card_icon_inactive {
+  opacity: 0.2;
+}
+
+.ginput_card_security_code_icon {
+  display: none;
+}
+ 
+.ginput_card_expiration_month {
+  margin-right: 15px;
+}
+
+.ginput_cardinfo_left {
+  flex: 2;
+}
+
+.ginput_card_expiration_container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  label {
+    width: 100%;
+  }
+}
+
+.ginput_cardinfo_right,
+.ginput_cardinfo_left, 
+.ginput_card_expiration {
+  flex: 1
+}
+
+@media (min-width: $screen-xxs) {
+  
+  .ginput_cardinfo_left {
+    margin-right: 30px;
+  }
+  
+  .ginput_cardextras {
+    display: flex;
+  }
+}
 
 // Gravity forms: feedback states
 

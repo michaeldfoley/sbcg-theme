@@ -21,6 +21,7 @@ main {
 // -------------------------
 
 .text-width {
+  width: 100%;
   max-width: $screen-sm;
   margin-left: auto;
   margin-right: auto;
@@ -37,5 +38,10 @@ article  {
   
   li {
     margin-bottom: $line-height-computed/2;
+    
+    ul,
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
