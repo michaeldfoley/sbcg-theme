@@ -1,0 +1,24 @@
+%svg-common {
+	background: url(assets/images/sprite.cc.svg) no-repeat;
+}
+
+.gform_card_icon_amex {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.gform_card_icon_discover {
+	@extend %svg-common;
+	background-position: 33.2821300563236% 0;
+}
+
+.gform_card_icon_mastercard {
+	@extend %svg-common;
+	background-position: 66.5642601126472% 0;
+}
+
+.gform_card_icon_visa {
+	@extend %svg-common;
+	background-position: 99.84639016897081% 0;
+}
+

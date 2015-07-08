@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 tasks: ['imagemin']
             },
             svg: {
-                files: ['<%= dirs.img %>/**/*.svg','!<%= dirs.img %>/sprite.symbol.svg'],
+                files: ['<%= dirs.img %>/**/*.svg','!<%= dirs.img %>/sprite.symbol.svg','!<%= dirs.img %>/sprite.cc.svg'],
                 tasks: ['svg_sprite']
             }
         },
@@ -109,19 +109,55 @@ module.exports = function(grunt) {
         
         // svg sprite
         svg_sprite: {
-          options: {
-            mode: {
-              symbol: {
-                dest: './',
-                sprite: 'sprite.symbol.svg'
-              } 
+          symbol: {
+            expand: true,
+            cwd: '<%= dirs.img %>/symbols/',
+            src: ['**/*.svg','!sprite.svg'],
+            dest: '<%= dirs.img %>',
+            
+            options: {
+              mode: {
+                symbol: {
+                  dest: './',
+                  sprite: 'sprite.symbol.svg'
+                }
+              }
             }
           },
-          dist: {
+          ccIcons: {
             expand: true,
-            cwd: '<%= dirs.img %>',
-            src: ['**/*.svg','!sprite.symbol.svg'],
-            dest: '<%= dirs.img %>',
+            cwd: '',
+            src: ['<%= dirs.img %>/cc-icons/**/*.svg','!sprite.svg'],
+            dest: '',
+            
+            options: {
+              shape: {
+                id: {
+                  generator: function (name) {
+                    var path = require('path');
+                    return path.basename(name.replace(/\s+/g, this.whitespace), '.svg')
+                  }
+                },
+                spacing: {
+                  padding: [2]
+                }
+              },
+              mode: {
+                css: {
+                  bust: false,
+                  dest: './',
+                  prefix: '.gform_card_icon_',
+                  dimensions: '',
+                  sprite: '<%= dirs.img %>/sprite.cc.svg',
+                  layout: 'horizontal',
+                  render: {
+                    scss: {
+                      dest: '<%= dirs.css %>/partials/_cc-icons'
+                    }
+                  }
+                }
+              }
+            }
           },
           
         },
@@ -151,7 +187,7 @@ module.exports = function(grunt) {
                 },
                 options: {
                     watchTask: true,
-                    proxy: 'sbcg.dev',
+                    proxy: 'https://sbcg.dev',
                     port: 8000
                 },
             }
