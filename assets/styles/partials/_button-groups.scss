@@ -1,0 +1,65 @@
+//
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+
+.btn-group li label {
+  @extend .btn;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+}
+
+.btn-group li {
+  input[type=radio] {
+    display: none;
+  }
+  
+  label:hover {
+    color: $btn-default-color;
+    background-color: darken($btn-default-bg, 10%);
+        border-color: darken($btn-default-border, 12%);
+  }
+  
+  input[type=radio]:checked + label {
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  }
+}
+
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  li {
+    position: relative;
+    float: left;
+  }
+}
+
+.btn-group {
+  li + li {
+    margin-left: -1px;
+  }
+}
+
+.btn-group li {
+  &:not(:first-child):not(:last-child) label {
+    border-radius: 0;
+  }
+}
+
+.btn-group li {
+  &:first-child {
+    margin-left: 0;
+    
+    &:not(:last-child) label {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  
+  &:last-child:not(:first-child) label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
