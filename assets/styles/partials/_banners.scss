@@ -6,10 +6,6 @@
 .banner {
   text-align: center;
   
-  h1, h2, h3, h4, h5, h6, p, ul, ol {
-    @extend .text-width;
-  }
-  
   :first-child {
     margin-top: 0;
   }
@@ -20,6 +16,10 @@
   color: $baner-top-color;
   padding-top: $banner-top-padding/2;
   padding-bottom: $banner-top-padding/2;
+  
+  h1, h2, h3, h4, h5, h6, p, ul, ol {
+    @extend .text-width;
+  }
   
   @media (min-width: $screen-sm) {
     padding-top: $banner-top-padding;
