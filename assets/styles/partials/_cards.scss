@@ -7,6 +7,27 @@
   display: flex;
   padding: ($grid-column-gutter / 2);
   background-color: $card-bg;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card-link {
+  color: #fff;
+  flex-grow: 1;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  text-align: center;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.card-content {
+  display: inline-block;
 }
 
 .card-row {
@@ -36,7 +57,8 @@
   }
   
   .card {
-    display: block;
+    //display: block;
+    flex-wrap: wrap;
     flex: 1;
     width: percentage((3 / $grid-columns));
     margin: 0 ($grid-column-gutter / 4);
