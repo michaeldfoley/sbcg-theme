@@ -191,38 +191,17 @@ module.exports = function(grunt) {
                     port: 8000
                 },
             }
-        },
-
-        // deploy via rsync
-        deploy: {
-            options: {
-                src: "./",
-                args: ["--verbose"],
-                exclude: ['.git*', 'node_modules', '.sass-cache', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb', '.jshintrc', '.bowerrc'],
-                recursive: true,
-                syncDestIgnoreExcl: true,
-                ssh: true
-            },
-            staging: {
-                 options: {
-                    dest: "~/domains/southbrooklynchildrensgarden.org/html/test2232/content/themes/sbcg",
-                    host: "sbcg"
-                }
-            },
-            production: {
-                options: {
-                    dest: "~/path/to/theme",
-                    host: "user@host.com"
-                }
-            }
         }
 
     });
 
-    // rename tasks
-    grunt.renameTask('rsync', 'deploy');
+    // build
+    grunt.registerTask('build', ['sass', 'autoprefixer', 'cssmin', 'uglify', 'svg_sprite', 'imagemin']);
 
-    // register task
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify', 'svg_sprite', 'imagemin', 'browserSync', 'watch']);
+    // serve
+    grunt.registerTask('serve', ['build', 'browserSync', 'watch']);
+
+    // default
+    grunt.registerTask('default', ['serve']);
 
 };
