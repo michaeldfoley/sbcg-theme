@@ -9,6 +9,12 @@
   display: flex;
 }
 
+.card-bg {
+  background-position: center;
+  background-size: cover;
+  margin-bottom: ($grid-column-gutter / 2);
+}
+
 .card-link {
   color: #fff;
   flex-grow: 1;
