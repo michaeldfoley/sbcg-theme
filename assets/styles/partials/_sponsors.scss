@@ -7,25 +7,77 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   max-width: none;
   padding: 0;
-  margin: 0 $grid-column-gutter/-2;
+  margin: 0 $grid-column-gutter/-3;
 }
 
 .sponsor {
-  padding: 20px $grid-column-gutter/2;
+  margin: 0;
+  padding: 10px $grid-column-gutter/3;
   width: 50%;
   text-align: center;
+}
+
+.sponsors-season .sponsor {
+  width: 75%;
+  max-width: 100%;
+}
+
+.sponsors-past .sponsor {
+  width: 33.3333%;
+}
   
-  @media (min-width: $screen-xs) {
+@media (min-width: $screen-xs) {
+  .sponsors {
+    margin: 0 $grid-column-gutter/-2;
+  }
+  
+  .sponsors-season .sponsor {
+    width: 50%;
+  }
+  
+  .sponsors-past .sponsor {
     width: 33.3333%;
   }
   
-  @media (min-width: $screen-sm) {
+  .sponsor { 
+    width: 33.3333%;
+    padding: 20px $grid-column-gutter/2;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  
+  .sponsors-season .sponsor {
+    width: 33.3333%;
+  }
+  
+  .sponsors-past .sponsor {
     width: 25%;
   }
   
-  @media (min-width: $screen-md) {
+  .sponsor {
+    width: 25%;
+  }
+  
+}
+
+@media (min-width: $screen-md) {
+  .sponsors-past .sponsor {
+    width: 25%;
+  }
+  
+  .sponsors-season .sponsor {
+    width: 25%;
+  }
+  
+  .sponsor { 
     width: 20%;
   }
+  
 }
+
+
