@@ -11,14 +11,18 @@
   align-items: center;
   max-width: none;
   padding: 0;
-  margin: 0 $grid-column-gutter/-3;
+  margin: 0;
 }
 
 .sponsor {
   margin: 0;
-  padding: 10px $grid-column-gutter/3;
   width: 50%;
   text-align: center;
+  
+  a {
+    display: block;
+    padding: 10px $grid-column-gutter/3;
+  }
 }
 
 .sponsors-season .sponsor {
@@ -31,9 +35,6 @@
 }
   
 @media (min-width: $screen-xs) {
-  .sponsors {
-    margin: 0 $grid-column-gutter/-2;
-  }
   
   .sponsors-season .sponsor {
     width: 50%;
@@ -45,7 +46,9 @@
   
   .sponsor { 
     width: 33.3333%;
-    padding: 20px $grid-column-gutter/2;
+    a {
+      padding: 20px $grid-column-gutter/2;
+    }
   }
 }
 
